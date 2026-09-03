@@ -1,0 +1,428 @@
+/* Container reset */
+.projects-container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 140px 1.5rem 3rem 1.5rem; /* Increased top padding from 80px to 140px */
+  box-sizing: border-box;
+  max-width: 1200px;        /* Ensure every section caps at the exact same width */
+  margin-left: auto;        /* Center align container */
+  margin-right: auto;       /* Center align container */
+  padding-left: 5rem;       /* Match your Home page horizontal gutter padding */
+  padding-right: 5rem;      /* Match your Home page horizontal gutter padding */
+  box-sizing: border-box;
+}
+
+/* =========================
+   HERO SECTION
+========================= */
+.projects-hero {
+  margin-top: 1rem; /* Adds additional breathing room from top navbar */
+  margin-bottom: 2.5rem;
+}
+.projects-hero-container {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 3rem;
+  align-items: center;
+  margin-bottom: 2.5rem;
+}
+
+.projects-eyebrow {
+  display: inline-block;
+  background-color: #5c2c0c;
+  color: #ffaa5b;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 1.2px;
+  padding: 0.4rem 0.8rem;
+  text-transform: uppercase;
+  margin-bottom: 1.25rem;
+}
+
+.projects-hero-content h1 {
+  font-size: 3.2rem;
+  font-weight: 900;
+  color: #0d4371;
+  line-height: 1.05;
+  margin: 0 0 1.5rem 0;
+  text-transform: uppercase;
+}
+
+.projects-hero-content p {
+  color: #555;
+  font-size: 1.05rem;
+  line-height: 1.6;
+  max-width: 90%;
+  margin: 0;
+}
+
+.projects-hero-image {
+  width: 100%;
+  height: 320px;
+  overflow: hidden;
+}
+
+.projects-hero-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* FILTERS */
+.projects-filter-container {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  border-bottom: 1px solid #e5e5e5;
+  padding-bottom: 1.5rem;
+}
+
+.project-filter {
+  background: #ffffff;
+  border: 1px solid #1a1a1a;
+  color: #1a1a1a;
+  padding: 0.5rem 1.25rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  cursor: pointer;
+  border-radius: 0;
+}
+
+.project-filter.active,
+.project-filter:hover {
+  background-color: #0d4371;
+  color: #ffffff;
+  border-color: #0d4371;
+}
+
+/* =========================
+   TOP ROW GRID - Asymmetric Split
+========================= */
+.top-grid {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr; /* Left card is wider */
+  gap: 20px;
+  width: 100%;
+  margin-bottom: 25px;
+}
+
+/* CARD BASE STYLES */
+.card {
+  position: relative !important;
+  height: 400px;
+  width: 100%;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+.card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* LEFT CARD OVERLAYS */
+.badge-orange {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: #ff6b00;
+  color: #fff;
+  font-size: 11px;
+  font-weight: 700;
+  padding: 8px 16px;
+  letter-spacing: 1px;
+  z-index: 10;
+}
+
+.card-overlay-left {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 20px;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.85), transparent);
+  color: #fff;
+  z-index: 10;
+}
+
+.card-overlay-left h2 {
+  margin: 0 0 12px 0;
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.progress-bar-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 13px;
+}
+
+.progress-bar-container span {
+  white-space: nowrap;
+}
+
+.track {
+  flex: 1;
+  height: 6px;
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.fill {
+  height: 100%;
+  background-color: #ff6b00;
+}
+
+/* RIGHT CARD OVERLAY (WHITE BOX) */
+.white-overlay-box {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  right: 20px;
+  background: #ffffff;
+  padding: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  z-index: 10;
+  box-sizing: border-box;
+}
+
+.cat-subtitle {
+  color: #ff6b00;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  display: block;
+  margin-bottom: 6px;
+}
+
+.white-overlay-box h3 {
+  margin: 0 0 8px 0;
+  font-size: 18px;
+  color: #111;
+  font-weight: 700;
+}
+
+.white-overlay-box p {
+  margin: 0;
+  font-size: 13px;
+  color: #555;
+  line-height: 1.4;
+}
+
+/* =========================
+   BOTTOM GRID
+========================= */
+.bottom-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  width: 100%;
+}
+
+.bottom-card-wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.bottom-card-image {
+  position: relative;
+  height: 260px;
+  width: 100%;
+  overflow: hidden;
+}
+
+.bottom-card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.gradient-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+}
+
+.bottom-card-text {
+  position: absolute;
+  bottom: 15px;
+  left: 15px;
+  right: 15px;
+  z-index: 5;
+}
+
+.bottom-card-text h3 {
+  color: #fff;
+  margin: 0 0 4px 0;
+  font-size: 18px;
+}
+
+.bottom-card-meta {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 10px;
+  font-size: 11px;
+  font-weight: 700;
+  color: #0d4371;
+}
+
+/* RESPONSIVE BREAKPOINTS */
+@media (max-width: 900px) {
+  .projects-hero-container,
+  .top-grid,
+  .bottom-grid {
+    grid-template-columns: 1fr;
+  }
+}
+/* =========================
+   FEATURED CASE STUDY
+========================= */
+.featured-case-study {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  width: 100%;
+  margin-top: 4rem;
+  background-color: #f5f6f8; /* Light gray background matching screenshot */
+  align-items: stretch;
+}
+
+.case-study-image {
+  width: 100%;
+  height: 100%;
+  min-height: 480px;
+  overflow: hidden;
+}
+
+.case-study-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.case-study-content {
+  padding: 4rem 3.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  box-sizing: border-box;
+}
+
+/* Orange Vertical Bar + Eyebrow */
+.case-study-eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 1.5rem;
+}
+
+.orange-line {
+  width: 4px;
+  height: 16px;
+  background-color: #ff6b00;
+  display: inline-block;
+}
+
+.eyebrow-text {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #555555;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.case-study-content h2 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #0d4371;
+  line-height: 1.15;
+  margin: 0 0 1.5rem 0;
+}
+
+.case-study-desc {
+  font-size: 0.95rem;
+  color: #555555;
+  line-height: 1.6;
+  max-width: 90%;
+  margin: 0 0 2.5rem 0;
+}
+
+/* Metrics Grid */
+.case-study-metrics {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  margin-bottom: 2.5rem;
+}
+
+.metric-item {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.metric-label {
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: #777777;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.metric-value {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #0d4371;
+}
+
+/* CTA Arrow Link */
+.case-study-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #0d4371;
+  text-decoration: none;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  transition: opacity 0.2s ease;
+}
+
+.case-study-link span {
+  font-size: 1.1rem;
+}
+
+.case-study-link:hover {
+  opacity: 0.8;
+}
+
+/* Mobile Responsive */
+@media (max-width: 900px) {
+  .featured-case-study {
+    grid-template-columns: 1fr;
+  }
+  
+  .case-study-content {
+    padding: 2.5rem 1.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .contact-hero-container,
+  .contact-details-section,
+  .contact-stats-section,
+  .blog-hero-container,
+  .blog-featured-section,
+  .blog-grid-section,
+  .blog-newsletter-section {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+}

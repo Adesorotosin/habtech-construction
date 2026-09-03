@@ -1,0 +1,253 @@
+/* =========================
+   CORE CAPABILITIES
+========================= */
+
+.capabilities {
+  width: 100%;
+  background: #f4f4f6;
+}
+
+.capabilities-container {
+  max-width: 1060px;
+  margin: 0 auto;
+  padding: 82px 0 78px;
+}
+
+/* =========================
+   HEADER
+========================= */
+
+.capabilities-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.capabilities-heading h2 {
+  margin: 0 0 16px;
+
+  color: #063d6d;
+
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 43px;
+  line-height: 1.15;
+  font-weight: 600;
+  letter-spacing: -1px;
+}
+
+.capabilities-heading p {
+  max-width: 800px;
+  margin: 0;
+
+  color: #23415c;
+
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 18px;
+  line-height: 1.7;
+  font-weight: 400;
+}
+
+/* =========================
+   DECORATIVE LINES
+========================= */
+
+.capabilities-lines {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+
+  padding-top: 7px;
+  flex-shrink: 0;
+}
+
+.capability-line {
+  display: block;
+
+  width: 55px;
+  height: 6px;
+}
+
+.capability-line.orange {
+  background: #f15a24;
+}
+
+.capability-line.blue {
+  background: #07558a;
+}
+
+/* =========================
+   CARDS
+========================= */
+
+.capability-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 39px;
+
+  margin-top: 62px;
+}
+
+.capability-card {
+  min-height: 365px;
+
+  padding: 28px 14px 30px;
+
+  background: #ffffff;
+}
+
+/* =========================
+   ICON
+========================= */
+
+.capability-icon {
+  width: 64px;
+  height: 64px;
+
+  margin-bottom: 31px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+}
+
+.capability-icon svg {
+  color: #050505;
+}
+
+.capability-card.commercial .capability-icon {
+  background: #e4f3ff;
+}
+
+.capability-card.industrial .capability-icon {
+  background: #fff0e8;
+}
+
+.capability-card.residential .capability-icon {
+  background: #fceaff;
+}
+
+.capability-icon svg {
+  width: 35px;
+  height: 35px;
+
+  fill: #050505;
+  stroke: #050505;
+  stroke-width: 1;
+}
+
+/* =========================
+   CARD TYPOGRAPHY
+========================= */
+
+.capability-card h3 {
+  margin: 0 0 16px;
+
+  color: #063d6d;
+
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 24px;
+  line-height: 1.2;
+  font-weight: 600;
+}
+
+.capability-description {
+  margin: 0;
+
+  color: #23415c;
+
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 17px;
+  line-height: 1.6;
+  font-weight: 400;
+}
+
+/* =========================
+   FEATURES
+========================= */
+
+.capability-features {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+
+  margin: 34px 0 0;
+  padding: 0;
+
+  list-style: none;
+}
+
+.capability-features li {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  color: #23415c;
+
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 14px;
+  line-height: 1.3;
+  font-weight: 400;
+}
+
+.feature-square {
+  width: 15px;
+  height: 15px;
+
+  flex-shrink: 0;
+
+  background: #ff641f;
+}
+
+/* =========================
+   TABLET
+========================= */
+
+@media (max-width: 1050px) {
+  .capabilities-container {
+    padding: 70px 30px;
+  }
+
+  .capability-grid {
+    gap: 25px;
+  }
+
+  .capabilities-heading h2 {
+    font-size: 38px;
+  }
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 800px) {
+  .capabilities-container {
+    padding: 60px 20px;
+  }
+
+  .capabilities-header {
+    flex-direction: column;
+    gap: 25px;
+  }
+
+  .capabilities-heading h2 {
+    font-size: 34px;
+  }
+
+  .capabilities-heading p {
+    font-size: 16px;
+  }
+
+  .capability-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+
+    margin-top: 40px;
+  }
+
+  .capability-card {
+    min-height: auto;
+  }
+}

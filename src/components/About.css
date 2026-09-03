@@ -1,0 +1,404 @@
+/* Container & Navbar clearance */
+.about-container {
+  width: 100%;
+  padding: 140px 100px 80px 100px; /* 140px top clearance, exact 100px side margins */
+  box-sizing: border-box;
+}
+
+/* Hero Section Grid Layout */
+.about-hero {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: 3.5rem;
+  align-items: center;
+  width: 100%;
+}
+
+/* Left Column Styling */
+.about-hero-left {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.est-badge {
+  display: inline-block;
+  background-color: #5c2c0c;
+  color: #ffaa5b;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 1.2px;
+  padding: 0.4rem 0.8rem;
+  text-transform: uppercase;
+  margin-bottom: 1.5rem;
+}
+
+.about-title {
+  font-size: 3.2rem;
+  font-weight: 900;
+  color: #0d4371;
+  line-height: 1.05;
+  margin: 0 0 1.75rem 0;
+  letter-spacing: -0.5px;
+}
+
+.title-muted {
+  color: #6b7280; /* Gray tone for PERMANENCE */
+}
+
+.about-description {
+  color: #555555;
+  font-size: 1.05rem;
+  line-height: 1.65;
+  max-width: 90%;
+  margin: 0;
+}
+
+/* Right Column Image Layout */
+.about-hero-right {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.about-image-wrapper {
+  position: relative;
+  width: 100%;
+  height: 440px;
+  overflow: hidden;
+}
+
+.about-image-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Responsive breakpoint */
+@media (max-width: 900px) {
+  .about-hero {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .about-description {
+    max-width: 100%;
+  }
+
+  .about-image-wrapper {
+    height: 320px;
+  }
+}
+
+/* =========================
+   BLUEPRINT & MISSION SECTION
+========================= */
+.about-blueprint-section {
+  display: grid;
+  grid-template-columns: 2.2fr 1fr;
+  margin-top: 5rem;
+  background-color: #ffffff;
+  box-shadow: 0 4px 25px rgba(0, 0, 0, 0.03);
+  align-items: stretch;
+}
+
+/* Left Content Wrapper */
+.blueprint-left {
+  display: flex;
+  position: relative;
+  background-color: #ffffff;
+}
+
+/* Dark Left Accent Border */
+.blueprint-accent-bar {
+  width: 12px;
+  background-color: #0b2341;
+  flex-shrink: 0;
+}
+
+.blueprint-main {
+  padding: 3.5rem 3rem 3rem 2.5rem;
+  flex: 1;
+}
+
+.blueprint-main h2 {
+  font-size: 2rem;
+  font-weight: 800;
+  color: #0b2341;
+  margin: 0 0 2rem 0;
+}
+
+/* Paragraph Columns */
+.blueprint-columns {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2.5rem;
+  margin-bottom: 3.5rem;
+}
+
+.blueprint-columns p {
+  font-size: 0.95rem;
+  color: #4a5568;
+  line-height: 1.65;
+  margin: 0;
+}
+
+/* Bottom Stats Row */
+.blueprint-stats {
+  display: flex;
+  gap: 4rem;
+}
+
+.stat-item {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.stat-number {
+  font-size: 2.2rem;
+  font-weight: 800;
+  color: #0b2341;
+  line-height: 1;
+}
+
+.stat-label {
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: #8896a6;
+  letter-spacing: 1px;
+}
+
+/* Right Navy Mission Card */
+.mission-card {
+  background-color: #06192e;
+  color: #ffffff;
+  padding: 3.5rem 2.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.mission-icon {
+  margin-bottom: 1.5rem;
+}
+
+.mission-card h3 {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0 0 2rem 0;
+}
+
+.mission-quote {
+  font-size: 1.05rem;
+  line-height: 1.65;
+  color: #d1d5db;
+  margin: 0;
+  font-style: normal;
+}
+
+/* Mobile Responsive */
+@media (max-width: 900px) {
+  .about-blueprint-section {
+    grid-template-columns: 1fr;
+  }
+
+  .blueprint-columns {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .blueprint-main {
+    padding: 2rem 1.5rem;
+  }
+
+  .mission-card {
+    padding: 2.5rem 1.5rem;
+  }
+}
+
+/* =========================
+   SAFETY SECTION
+========================= */
+.safety-section {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 4rem;
+  margin-top: 6rem;
+  margin-bottom: 5rem;
+  align-items: start;
+}
+
+/* Left Intro Column */
+.safety-intro h2 {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: #0d4371;
+  line-height: 1.1;
+  margin: 0 0 1.5rem 0;
+}
+
+.safety-intro p {
+  font-size: 0.95rem;
+  color: #555555;
+  line-height: 1.65;
+  margin: 0 0 2rem 0;
+}
+
+.safety-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #0d4371;
+  text-decoration: none;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+.safety-link span {
+  font-size: 1.1rem;
+}
+
+.safety-link:hover {
+  opacity: 0.8;
+}
+
+/* Right 2x2 Feature Grid */
+.safety-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem 2.5rem;
+}
+
+.safety-card {
+  display: flex;
+  flex-direction: column;
+}
+
+.safety-icon {
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+}
+
+.safety-card h3 {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #0d4371;
+  margin: 0 0 0.75rem 0;
+}
+
+.safety-card p {
+  font-size: 0.9rem;
+  color: #555555;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* Mobile Responsive */
+@media (max-width: 900px) {
+  .safety-section {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+
+  .safety-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .about-container {
+    padding: 120px 2rem 4rem 2rem; /* Gracefully scales margin down on tablet/mobile */
+  }
+}
+
+/* =========================
+   ABOUT CTA SECTION
+========================= */
+.about-cta {
+  text-align: center;
+  padding: 6rem 1.5rem;
+  margin-top: 4rem;
+  background-color: transparent;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.about-cta h2 {
+  font-size: 2.75rem;
+  font-weight: 800;
+  color: #0b2341;
+  line-height: 1.2;
+  margin: 0 0 1.25rem 0;
+}
+
+.about-cta p {
+  font-size: 1.05rem;
+  color: #555555;
+  margin: 0 0 2.5rem 0;
+}
+
+.cta-actions {
+  display: flex;
+  gap: 1.25rem;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.btn-primary {
+  background-color: #0b2341;
+  color: #ffffff;
+  border: none;
+  padding: 1rem 2rem;
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  cursor: pointer;
+  border-radius: 0;
+  transition: background-color 0.2s ease;
+}
+
+.btn-primary:hover {
+  background-color: #06192e;
+}
+
+.btn-secondary {
+  background-color: #e5e7eb;
+  color: #0b2341;
+  text-decoration: none;
+  padding: 1rem 2rem;
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  display: inline-block;
+  transition: background-color 0.2s ease;
+}
+
+.btn-secondary:hover {
+  background-color: #d1d5db;
+}
+
+/* Mobile Responsive */
+@media (max-width: 600px) {
+  .about-cta h2 {
+    font-size: 2rem;
+  }
+  
+  .cta-actions {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .btn-primary,
+  .btn-secondary {
+    width: 100%;
+    text-align: center;
+    box-sizing: border-box;
+  }
+}
