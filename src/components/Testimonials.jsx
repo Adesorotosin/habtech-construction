@@ -1,129 +1,26 @@
 import "./Testimonials.css";
 
-const testimonials = [
-  {
-    name: "Jerome Bell",
-    role: "Home owner",
-    image: "/assets/portfolio_1.avif",
-    text:
-      "Our office renovation exceeded all expectations! The team was professional, punctual, and incredibly skilled. They handled every challenge with ease and delivered stunning results. We now have a workspace that inspires creativity.",
-  },
-  {
-    name: "Robert Fox",
-    role: "Home owner",
-    image: "/assets/portfolio_2.avif",
-    text:
-      "Our office renovation exceeded all expectations! The team was professional, punctual, and incredibly skilled. They handled every challenge with ease and delivered stunning results. We now have a workspace that inspires creativity.",
-  },
-  {
-    name: "Kristin Watson",
-    role: "Project Manager",
-    image: "/assets/portfolio_3.avif",
-    text:
-      "Working with the HABTECH team was an excellent experience. They communicated clearly throughout the project and delivered quality work while maintaining a high level of professionalism.",
-  },
-  {
-    name: "Cameron Williamson",
-    role: "Property Developer",
-    image: "/assets/portfolio_4.avif",
-    text:
-      "HABTECH delivered exactly what we envisioned. Their attention to detail, technical expertise, and commitment to quality made the entire construction process smooth and reliable.",
-  },
-  {
-    name: "Jane Cooper",
-    role: "Business Owner",
-    image: "/assets/Habtech logo.jpg",
-    text:
-      "From planning to completion, the team demonstrated impressive professionalism. The final result exceeded our expectations, and we would gladly recommend HABTECH for future projects.",
-  },
+const clientPrinciples = [
+  { number: "01", title: "Clear communication", text: "Project information, decisions, scope changes, and next steps should be communicated clearly throughout the work." },
+  { number: "02", title: "Practical planning", text: "Good preparation helps clients understand what needs to happen before major construction decisions are made." },
+  { number: "03", title: "Quality-focused execution", text: "Construction work should be coordinated around drawings, specifications, workmanship, safety, and agreed requirements." },
+  { number: "04", title: "Transparent estimation", text: "A clear BOQ and cost review can help clients understand quantities, scope, and the assumptions behind project costs." },
 ];
 
 function Testimonials() {
   return (
     <section className="testimonials" id="testimonials">
-
       <div className="testimonials-container">
-
-        {/* Section Heading */}
         <div className="testimonials-header">
-
-          <h2>HEAR FROM OUR CUSTOMERS</h2>
-
-          <p>
-            Our clients trust us for our reliability, attention to details,
-            and dedication to delivering projects on time and within budget.
-            Hear from those who have experienced the quality and
-            professionalism that sets us apart in the construction industry.
-          </p>
-
+          <h2>WHAT CLIENTS SHOULD EXPECT</h2>
+          <p>We are building this experience around the fundamentals that matter when choosing construction support: clarity, planning, quality, and responsible project coordination.</p>
         </div>
-
-
-        {/* Testimonials Marquee */}
-        <div className="testimonial-marquee">
-
+        <div className="testimonial-marquee testimonial-principles">
           <div className="testimonial-track">
-
-            {/* First set */}
-            {testimonials.map((testimonial, index) => (
-              <article
-                className="testimonial-card"
-                key={`first-${index}`}
-              >
-
-                <img
-                  className="testimonial-avatar"
-                  src={testimonial.image}
-                  alt={testimonial.name}
-                />
-
-                <h3>{testimonial.name}</h3>
-
-                <p className="testimonial-role">
-                  {testimonial.role}
-                </p>
-
-                <p className="testimonial-text">
-                  {testimonial.text}
-                </p>
-
-              </article>
-            ))}
-
-
-            {/* Duplicate set for seamless marquee */}
-            {testimonials.map((testimonial, index) => (
-              <article
-                className="testimonial-card"
-                key={`second-${index}`}
-                aria-hidden="true"
-              >
-
-                <img
-                  className="testimonial-avatar"
-                  src={testimonial.image}
-                  alt=""
-                />
-
-                <h3>{testimonial.name}</h3>
-
-                <p className="testimonial-role">
-                  {testimonial.role}
-                </p>
-
-                <p className="testimonial-text">
-                  {testimonial.text}
-                </p>
-
-              </article>
-            ))}
-
+            {clientPrinciples.map((item) => <article className="testimonial-card" key={item.number}><span className="principle-number">{item.number}</span><h3>{item.title}</h3><p className="testimonial-text">{item.text}</p></article>)}
           </div>
-
         </div>
-
       </div>
-
     </section>
   );
 }
