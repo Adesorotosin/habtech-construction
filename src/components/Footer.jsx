@@ -47,21 +47,27 @@ function Footer({ onOpenQuote }) {
 
           <div className="contact-item">
 
-            <span className="contact-icon">⌖</span>
+            <span className="contact-icon" aria-hidden="true">
+              ◎
+            </span>
 
-            <p>
-              Ibadan, Nigeria
-            </p>
+            <a
+              href="https://www.instagram.com/habtechenterprise?stkn=am9sYmdubjZmbHVl&utm_source=qr"
+              target="_blank"
+              rel="noreferrer"
+            >
+              Instagram
+            </a>
 
           </div>
 
 
           <div className="contact-item">
 
-            <span className="contact-icon">♧</span>
+            <span className="contact-icon" aria-hidden="true">♧</span>
 
-            <a href="tel:+2347058175108">
-              +234 7058175108
+            <a href="tel:+2348143111188">
+              +234 814 311 1188
             </a>
 
           </div>
