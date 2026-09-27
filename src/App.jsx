@@ -47,7 +47,7 @@ function App() {
           path="/about"
           element={<About onOpenQuote={openQuote} />}
         />
-        <Route path="/services" element={<Services />} />
+        <Route path="/services" element={<Services onOpenQuote={openQuote} />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/blog" element={<Blog />} />
         <Route path="/construction-guide" element={<ConstructionGuide />} />
