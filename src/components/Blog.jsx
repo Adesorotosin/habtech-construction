@@ -10,7 +10,7 @@ const POSTS_DATA = [
     readTime: "5 min read",
     excerpt:
       "Exploring modern load-bearing materials and reinforced concrete techniques reshaping urban skylines.",
-    image: "/assets/blog-1.avif",
+    image: "/assets/portfolio_1.avif",
     featured: true,
   },
   {
@@ -21,7 +21,7 @@ const POSTS_DATA = [
     readTime: "4 min read",
     excerpt:
       "How rigorous site protocol and continuous risk monitoring eliminate workplace hazards on heavy build sites.",
-    image: "/assets/blog-2.avif",
+    image: "/assets/portfolio_2.avif",
     featured: false,
   },
   {
@@ -32,7 +32,7 @@ const POSTS_DATA = [
     readTime: "6 min read",
     excerpt:
       "A deep dive into circular materials, reusable steel formwork, and minimizing material waste on site.",
-    image: "/assets/blog-3.avif",
+    image: "/assets/portfolio_3.avif",
     featured: false,
   },
   {
@@ -43,7 +43,7 @@ const POSTS_DATA = [
     readTime: "7 min read",
     excerpt:
       "Balancing active facility operational needs with aggressive structural retrofit project schedules.",
-    image: "/assets/blog-4.avif",
+    image: "/assets/portfolio_4.avif",
     featured: false,
   },
 ];
