@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 import "./Navbar.css";
-import RequestQuote from "./RequestQuote";
 import { NavLink } from "react-router-dom";
 
 const navigation = [
@@ -14,9 +13,8 @@ const navigation = [
   { label: "CONTACT", to: "/contact" },
 ];
 
-function Navbar() {
+function Navbar({ onOpenQuote }) {
   const [scrolled, setScrolled] = useState(false);
-  const [quoteOpen, setQuoteOpen] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
 
   useEffect(() => {
@@ -36,8 +34,8 @@ function Navbar() {
   };
 
   const handleQuoteClick = () => {
-    setMenuOpen(false);
-    setQuoteOpen(true);
+    closeMenu();
+    onOpenQuote();
   };
 
   return (
@@ -106,11 +104,6 @@ function Navbar() {
           <span>→</span>
         </button>
       </div>
-
-      <RequestQuote
-        isOpen={quoteOpen}
-        onClose={() => setQuoteOpen(false)}
-      />
     </nav>
   );
 }
