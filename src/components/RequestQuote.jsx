@@ -1,36 +1,35 @@
 import { useEffect, useState } from "react";
 import "./RequestQuote.css";
 
+const INITIAL_FORM = {
+  fullName: "",
+  email: "",
+  phone: "",
+  company: "",
+  location: "",
+  projectType: "",
+  estimatedSize: "",
+  projectStage: "",
+  budget: "",
+  startDate: "",
+  projectDescription: "",
+  additionalRequirements: "",
+};
+
 function RequestQuote({ isOpen, onClose }) {
-  const [formData, setFormData] = useState({
-    fullName: "",
-    email: "",
-    phone: "",
-    company: "",
-    projectType: "",
-    location: "",
-    budget: "",
-    startDate: "",
-    projectDescription: "",
-    additionalRequirements: "",
-  });
-
+  const [formData, setFormData] = useState(INITIAL_FORM);
+  const [projectFile, setProjectFile] = useState(null);
   const [submitting, setSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState("");
 
-  // Prevent background scrolling while modal is open
   useEffect(() => {
-    if (isOpen) {
-      document.body.style.overflow = "hidden";
-    } else {
-      document.body.style.overflow = "";
-    }
+    document.body.style.overflow = isOpen ? "hidden" : "";
 
     return () => {
       document.body.style.overflow = "";
     };
   }, [isOpen]);
 
-  // Close with Escape key
   useEffect(() => {
     const handleEscape = (event) => {
       if (event.key === "Escape") {
@@ -54,50 +53,69 @@ function RequestQuote({ isOpen, onClose }) {
       ...previous,
       [name]: value,
     }));
+
+    setSubmitStatus("");
+  };
+
+  const handleFileChange = (event) => {
+    const file = event.target.files?.[0] || null;
+    setProjectFile(file);
+    setSubmitStatus("");
   };
 
   const handleSubmit = async (event) => {
     event.preventDefault();
     setSubmitting(true);
+    setSubmitStatus("");
 
     try {
-      // Send form data as JSON to Formspree
+      const payload = new FormData();
+
+      Object.entries(formData).forEach(([key, value]) => {
+        payload.append(key, value);
+      });
+
+      if (projectFile) {
+        payload.append("projectFile", projectFile);
+      }
+
       const response = await fetch("https://formspree.io/f/mppzrwlj", {
         method: "POST",
         headers: {
-          "Content-Type": "application/json",
           Accept: "application/json",
         },
-        body: JSON.stringify(formData),
+        body: payload,
       });
 
-      if (response.ok) {
-        alert(
-          "Thank you for your project enquiry. HABTECH will review your request and get back to you."
-        );
-
-        setFormData({
-          fullName: "",
-          email: "",
-          phone: "",
-          company: "",
-          projectType: "",
-          location: "",
-          budget: "",
-          startDate: "",
-          projectDescription: "",
-          additionalRequirements: "",
-        });
-
-        onClose();
-      } else {
-        alert("There was an issue sending your request. Please try again.");
+      if (!response.ok) {
+        throw new Error("Unable to submit quote request");
       }
+
+      setSubmitStatus(
+        "success",
+        "Thank you. HABTECH will review your project enquiry and get back to you."
+      );
     } catch (error) {
-      alert("Network error. Please check your connection and try again.");
+      setSubmitStatus(
+        "error",
+        "We could not send your request. Please try again or contact HABTECH directly."
+      );
     } finally {
       setSubmitting(false);
     }
+  };
+
+  const setSubmitStatus = (type, message) => {
+    setSubmitStatusValue({ type, message });
+  };
+
+  const [submitStatusValue, setSubmitStatusValue] = useState(null);
+
+  const resetAndClose = () => {
+    setFormData(INITIAL_FORM);
+    setProjectFile(null);
+    setSubmitStatusValue(null);
+    onClose();
   };
 
   if (!isOpen) {
@@ -113,21 +131,19 @@ function RequestQuote({ isOpen, onClose }) {
         }
       }}
     >
-      <div className="quote-modal">
-
-        {/* Header */}
+      <div
+        className="quote-modal"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="quote-modal-title"
+      >
         <div className="quote-modal-header">
-
           <div>
-            <p className="quote-eyebrow">
-              HABTECH CONSTRUCTION
-            </p>
-
-            <h2>Request a Quote</h2>
-
+            <p className="quote-eyebrow">HABTECH CONSTRUCTION</p>
+            <h2 id="quote-modal-title">Request a Quote</h2>
             <p className="quote-intro">
-              Tell us about your project and our team will get back to you
-              with the next steps.
+              Tell us about your project so we can understand the scope,
+              current stage and information you already have.
             </p>
           </div>
 
@@ -139,28 +155,14 @@ function RequestQuote({ isOpen, onClose }) {
           >
             ×
           </button>
-
         </div>
 
-
-        {/* Form */}
-        <form
-          className="quote-form"
-          onSubmit={handleSubmit}
-        >
-
-          {/* Personal Details */}
-          <div className="quote-section-title">
-            Your details
-          </div>
+        <form className="quote-form" onSubmit={handleSubmit}>
+          <div className="quote-section-title">Your details</div>
 
           <div className="quote-form-grid">
-
             <div className="quote-field">
-              <label htmlFor="fullName">
-                Full name *
-              </label>
-
+              <label htmlFor="fullName">Full name *</label>
               <input
                 id="fullName"
                 name="fullName"
@@ -172,12 +174,8 @@ function RequestQuote({ isOpen, onClose }) {
               />
             </div>
 
-
             <div className="quote-field">
-              <label htmlFor="email">
-                Email address *
-              </label>
-
+              <label htmlFor="email">Email address *</label>
               <input
                 id="email"
                 name="email"
@@ -189,12 +187,8 @@ function RequestQuote({ isOpen, onClose }) {
               />
             </div>
 
-
             <div className="quote-field">
-              <label htmlFor="phone">
-                Phone number *
-              </label>
-
+              <label htmlFor="phone">Phone number *</label>
               <input
                 id="phone"
                 name="phone"
@@ -206,12 +200,8 @@ function RequestQuote({ isOpen, onClose }) {
               />
             </div>
 
-
             <div className="quote-field">
-              <label htmlFor="company">
-                Company / Organization
-              </label>
-
+              <label htmlFor="company">Company / Organization</label>
               <input
                 id="company"
                 name="company"
@@ -221,22 +211,26 @@ function RequestQuote({ isOpen, onClose }) {
                 onChange={handleChange}
               />
             </div>
-
           </div>
 
-
-          {/* Project Details */}
-          <div className="quote-section-title">
-            Project details
-          </div>
+          <div className="quote-section-title">Project details</div>
 
           <div className="quote-form-grid">
+            <div className="quote-field">
+              <label htmlFor="location">Project location *</label>
+              <input
+                id="location"
+                name="location"
+                type="text"
+                placeholder="City / State / Area"
+                value={formData.location}
+                onChange={handleChange}
+                required
+              />
+            </div>
 
             <div className="quote-field">
-              <label htmlFor="projectType">
-                Project type *
-              </label>
-
+              <label htmlFor="projectType">Project type *</label>
               <select
                 id="projectType"
                 name="projectType"
@@ -244,101 +238,72 @@ function RequestQuote({ isOpen, onClose }) {
                 onChange={handleChange}
                 required
               >
-                <option value="">
-                  Select project type
-                </option>
-
-                <option value="Residential">
-                  Residential
-                </option>
-
-                <option value="Commercial">
-                  Commercial
-                </option>
-
-                <option value="Industrial">
-                  Industrial
-                </option>
-
-                <option value="Infrastructure">
-                  Infrastructure
-                </option>
-
-                <option value="Renovation">
-                  Renovation
-                </option>
-
-                <option value="Other">
-                  Other
-                </option>
+                <option value="">Select project type</option>
+                <option value="Building construction">Building construction</option>
+                <option value="Construction consultation">Construction consultation</option>
+                <option value="Renovation and remodeling">Renovation and remodeling</option>
+                <option value="Project management">Project management</option>
+                <option value="Site supervision">Site supervision</option>
+                <option value="BOQ and cost estimation">BOQ and cost estimation</option>
+                <option value="Property inspection">Property inspection</option>
+                <option value="Other">Other</option>
               </select>
             </div>
 
-
             <div className="quote-field">
-              <label htmlFor="location">
-                Project location *
-              </label>
-
+              <label htmlFor="estimatedSize">Estimated project size</label>
               <input
-                id="location"
-                name="location"
+                id="estimatedSize"
+                name="estimatedSize"
                 type="text"
-                placeholder="City / State"
-                value={formData.location}
+                placeholder="e.g. 4-bedroom duplex, 300m²"
+                value={formData.estimatedSize}
                 onChange={handleChange}
-                required
               />
             </div>
 
+            <div className="quote-field">
+              <label htmlFor="projectStage">Current project stage *</label>
+              <select
+                id="projectStage"
+                name="projectStage"
+                value={formData.projectStage}
+                onChange={handleChange}
+                required
+              >
+                <option value="">Select current stage</option>
+                <option value="Idea / early planning">Idea / early planning</option>
+                <option value="Design / drawings">Design / drawings</option>
+                <option value="Approvals">Approvals</option>
+                <option value="Site preparation">Site preparation</option>
+                <option value="Foundation">Foundation</option>
+                <option value="Structural works">Structural works</option>
+                <option value="Finishing">Finishing</option>
+                <option value="Renovation in progress">Renovation in progress</option>
+                <option value="Completed property">Completed property</option>
+              </select>
+            </div>
 
             <div className="quote-field">
-              <label htmlFor="budget">
-                Estimated budget
-              </label>
-
+              <label htmlFor="budget">Budget range</label>
               <select
                 id="budget"
                 name="budget"
                 value={formData.budget}
                 onChange={handleChange}
               >
-                <option value="">
-                  Select budget range
-                </option>
-
-                <option value="Below ₦10M">
-                  Below ₦10M
-                </option>
-
-                <option value="₦10M - ₦50M">
-                  ₦10M - ₦50M
-                </option>
-
-                <option value="₦50M - ₦100M">
-                  ₦50M - ₦100M
-                </option>
-
-                <option value="₦100M - ₦500M">
-                  ₦100M - ₦500M
-                </option>
-
-                <option value="Above ₦500M">
-                  Above ₦500M
-                </option>
-
-                <option value="Not sure yet">
-                  Not sure yet
-                </option>
+                <option value="">Select budget range</option>
+                <option value="Below ₦10M">Below ₦10M</option>
+                <option value="₦10M - ₦50M">₦10M - ₦50M</option>
+                <option value="₦50M - ₦100M">₦50M - ₦100M</option>
+                <option value="₦100M - ₦500M">₦100M - ₦500M</option>
+                <option value="Above ₦500M">Above ₦500M</option>
+                <option value="Not sure yet">Not sure yet</option>
               </select>
             </div>
 
-
             <div className="quote-field">
-              <label htmlFor="startDate">
-                Expected start date
-              </label>
-
+              <label htmlFor="startDate">Expected start date</label>
               <input
                 id="startDate"
                 name="startDate"
@@ -347,58 +312,68 @@ function RequestQuote({ isOpen, onClose }) {
                 onChange={handleChange}
               />
             </div>
-
           </div>
 
-
-          {/* Description */}
-          <div className="quote-section-title">
-            Tell us about the project
-          </div>
+          <div className="quote-section-title">Project information</div>
 
           <div className="quote-field">
-
-            <label htmlFor="projectDescription">
-              Project description *
-            </label>
-
+            <label htmlFor="projectDescription">Project description *</label>
             <textarea
               id="projectDescription"
               name="projectDescription"
               rows="5"
-              placeholder="Tell us about the project, scope of work, size, requirements, or anything else that would help us understand what you need."
+              placeholder="Tell us what you want to build, renovate, inspect or manage. Include anything important about the scope."
               value={formData.projectDescription}
               onChange={handleChange}
               required
             />
-
           </div>
 
-
           <div className="quote-field">
-
-            <label htmlFor="additionalRequirements">
-              Additional requirements
-            </label>
-
+            <label htmlFor="additionalRequirements">Additional requirements</label>
             <textarea
               id="additionalRequirements"
               name="additionalRequirements"
               rows="3"
-              placeholder="Any special requirements, specifications, deadlines, or questions?"
+              placeholder="Special requirements, specifications, deadlines or questions?"
               value={formData.additionalRequirements}
               onChange={handleChange}
             />
-
           </div>
 
+          <div className="quote-field quote-file-field">
+            <label htmlFor="projectFile">Upload drawings / BOQ</label>
+            <input
+              id="projectFile"
+              name="projectFile"
+              type="file"
+              accept=".pdf,.jpg,.jpeg,.png,.webp,.doc,.docx,.xls,.xlsx"
+              onChange={handleFileChange}
+            />
+            <small>
+              Optional. PDF, images, Word or Excel files. Keep the file size
+              within the limit supported by your Formspree plan.
+            </small>
+            {projectFile && (
+              <span className="quote-file-name">
+                Selected: {projectFile.name}
+              </span>
+            )}
+          </div>
 
-          {/* Submit */}
+          {submitStatusValue && (
+            <div
+              className={`quote-status quote-status-${submitStatusValue.type}`}
+              role="status"
+            >
+              {submitStatusValue.message}
+            </div>
+          )}
+
           <div className="quote-submit-area">
-
             <p>
-              By submitting this form, you agree that HABTECH may contact
-              you regarding your project enquiry.
+              By submitting this form, you agree that HABTECH may contact you
+              regarding your project enquiry.
             </p>
 
             <button
@@ -409,11 +384,8 @@ function RequestQuote({ isOpen, onClose }) {
               {submitting ? "Submitting..." : "Submit Request"}
               <span>→</span>
             </button>
-
           </div>
-
         </form>
-
       </div>
     </div>
   );
