@@ -1,6 +1,5 @@
 import { useEffect, useRef, useState } from "react";
 import "./CTA.css";
-import BidModal from "./BidModal";
 
 function AnimatedNumber({ value, suffix = "", duration = 2000 }) {
   const [count, setCount] = useState(0);
@@ -36,10 +35,7 @@ function AnimatedNumber({ value, suffix = "", duration = 2000 }) {
     const animate = (currentTime) => {
       const elapsed = currentTime - startTime;
       const progress = Math.min(elapsed / duration, 1);
-
-      // Smooth easing
       const easedProgress = 1 - Math.pow(1 - progress, 3);
-
       const currentValue = value * easedProgress;
 
       setCount(currentValue);
@@ -61,56 +57,42 @@ function AnimatedNumber({ value, suffix = "", duration = 2000 }) {
   );
 }
 
-function CTA() {
-  const [isModalOpen, setIsModalOpen] = useState(false);
-
+function CTA({ onOpenQuote }) {
   return (
-    <>
-      <section className="cta-section">
-        <div className="cta-container">
-          {/* Heading */}
-          <h2>READY TO LAY THE FIRST STONE?</h2>
+    <section className="cta-section">
+      <div className="cta-container">
+        <h2>READY TO LAY THE FIRST STONE?</h2>
 
-          {/* Orange Progress Line */}
-          <div className="cta-line">
-            <span></span>
-          </div>
-
-          {/* Statistics */}
-          <div className="cta-stats">
-            <div className="cta-stat">
-              <AnimatedNumber value={25} suffix="+" />
-              <span>PROJECTS COMPLETED</span>
-            </div>
-
-            <div className="cta-stat">
-              <AnimatedNumber value={2.5} />
-              <span>SAFE WORK HOURS</span>
-            </div>
-
-            <div className="cta-stat">
-              <AnimatedNumber value={100} suffix="%" />
-              <span>COMPLIANCE RECORD</span>
-            </div>
-          </div>
-
-          {/* CTA Button */}
-          <button
-            type="button"
-            className="cta-button"
-            onClick={() => setIsModalOpen(true)}
-          >
-            GET A BID PROPOSAL
-          </button>
+        <div className="cta-line">
+          <span></span>
         </div>
-      </section>
 
-      {/* Proposal Modal Component */}
-      <BidModal
-        isOpen={isModalOpen}
-        onClose={() => setIsModalOpen(false)}
-      />
-    </>
+        <div className="cta-stats">
+          <div className="cta-stat">
+            <AnimatedNumber value={25} suffix="+" />
+            <span>PROJECTS COMPLETED</span>
+          </div>
+
+          <div className="cta-stat">
+            <AnimatedNumber value={2.5} />
+            <span>SAFE WORK HOURS</span>
+          </div>
+
+          <div className="cta-stat">
+            <AnimatedNumber value={100} suffix="%" />
+            <span>COMPLIANCE RECORD</span>
+          </div>
+        </div>
+
+        <button
+          type="button"
+          className="cta-button"
+          onClick={onOpenQuote}
+        >
+          GET A BID PROPOSAL
+        </button>
+      </div>
+    </section>
   );
 }
 
