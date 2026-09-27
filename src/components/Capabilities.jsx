@@ -1,131 +1,132 @@
 import "./Capabilities.css";
 import {
-  BuildingOffice,
-  Factory,
-  House,
-} from "@phosphor-icons/react";
+  BadgeCheck,
+  ClipboardCheck,
+  FileCheck2,
+  HardHat,
+  Ruler,
+  ShieldCheck,
+  UsersRound,
+} from "lucide-react";
 
-function CapabilityIcon({ type }) {
-  if (type === "commercial") {
-    return (
-      <BuildingOffice
-        size={34}
-        weight="regular"
-        aria-hidden="true"
-      />
-    );
-  }
-
-  if (type === "industrial") {
-    return (
-      <Factory
-        size={34}
-        weight="regular"
-        aria-hidden="true"
-      />
-    );
-  }
-
-  return (
-    <House
-      size={34}
-      weight="regular"
-      aria-hidden="true"
-    />
-  );
-}
-
-const capabilities = [
+const strengths = [
   {
-    type: "commercial",
-    title: "COMMERCIAL",
+    icon: BadgeCheck,
+    number: "01",
+    title: "Registered Builder",
     description:
-      "Scalable office structures and retail hubs designed for high-density traffic and long-term operational efficiency.",
-    features: [
-      "LEAD PLATINUM STANDARD",
-      "FAST-TRACK SCHEDULING",
-    ],
+      "Professional construction practice grounded in recognised building standards and responsible project delivery.",
   },
   {
-    type: "industrial",
-    title: "INDUSTRIAL",
+    icon: Ruler,
+    number: "02",
+    title: "Registered Engineer",
     description:
-      "Specialized facilities requiring heavy load tolerances, advanced ventilation, and complex electrical integration.",
-    features: [
-      "REINFORCED CONCRETE",
-      "PROCESS ENGINEERING",
-    ],
+      "Technical coordination and engineering input to help projects move from drawings and specifications to practical execution.",
   },
   {
-    type: "residential",
-    title: "RESIDENTIAL",
+    icon: ClipboardCheck,
+    number: "03",
+    title: "Professional Project Management",
     description:
-      "Bespoke luxury estates and high-rise multi-family developments focusing on architectural aesthetics and comfort.",
-    features: [
-      "CUSTOM FABRICATION",
-      "SMART HOME ECOSYSTEMS",
-    ],
+      "Clear coordination of scope, people, materials, schedules, documentation, and project deliverables.",
+  },
+  {
+    icon: ShieldCheck,
+    number: "04",
+    title: "Quality-Focused Construction",
+    description:
+      "Attention to workmanship, materials, specifications, and the details that influence long-term performance.",
+  },
+  {
+    icon: FileCheck2,
+    number: "05",
+    title: "Transparent Documentation",
+    description:
+      "Better project decisions start with clear records, estimates, scope information, and construction documentation.",
+  },
+  {
+    icon: HardHat,
+    number: "06",
+    title: "Safety-Conscious Execution",
+    description:
+      "Safety considerations are built into how construction activities are planned, coordinated, and supervised.",
+  },
+  {
+    icon: UsersRound,
+    number: "07",
+    title: "Experienced Site Supervision",
+    description:
+      "Active site oversight helps keep construction activities aligned with project requirements and expected standards.",
   },
 ];
 
 function Capabilities() {
   return (
-    <section className="capabilities" id="services">
+    <section className="capabilities" id="why-habtech">
       <div className="capabilities-container">
-
-        {/* Section Heading */}
         <div className="capabilities-header">
-
           <div className="capabilities-heading">
-            <h2>CORE CAPABILITIES</h2>
-
+            <span className="capabilities-eyebrow">WHY HABTECH</span>
+            <h2>Professional thinking behind every build.</h2>
             <p>
-              Our multidisciplinary approach ensures every phase of
-              construction is handled with surgical precision, from site prep
-              to final occupancy.
+              Construction is more than putting materials together. Habtech
+              combines professional expertise, project coordination,
+              documentation, quality control, and site supervision to help
+              clients build with greater clarity and confidence.
             </p>
           </div>
 
-          <div className="capabilities-lines">
-            <span className="capability-line orange"></span>
-            <span className="capability-line blue"></span>
+          <div className="capabilities-mark" aria-hidden="true">
+            <span />
+            <span />
+            <span />
+          </div>
+        </div>
+
+        <div className="capabilities-grid">
+          {strengths.map((strength) => {
+            const Icon = strength.icon;
+
+            return (
+              <article className="capability-card" key={strength.title}>
+                <div className="capability-card-top">
+                  <span className="capability-number">{strength.number}</span>
+                  <div className="capability-icon">
+                    <Icon size={24} strokeWidth={1.8} />
+                  </div>
+                </div>
+
+                <h3>{strength.title}</h3>
+                <p>{strength.description}</p>
+
+                <span className="capability-rule" />
+              </article>
+            );
+          })}
+        </div>
+
+        <div className="capabilities-footer">
+          <div>
+            <span className="footer-icon">
+              <ShieldCheck size={22} />
+            </span>
+            <div>
+              <strong>BUILT AROUND PROFESSIONAL ACCOUNTABILITY</strong>
+              <p>
+                Clear processes, responsible execution, and practical
+                communication throughout the project lifecycle.
+              </p>
+            </div>
           </div>
 
+          <div className="capabilities-footer-stats">
+            <span>PLAN</span>
+            <span>COORDINATE</span>
+            <span>SUPERVISE</span>
+            <span>DELIVER</span>
+          </div>
         </div>
-
-        {/* Capability Cards */}
-        <div className="capability-grid">
-
-          {capabilities.map((capability) => (
-            <article
-              className={`capability-card ${capability.type}`}
-              key={capability.title}
-            >
-
-              <div className="capability-icon">
-                <CapabilityIcon type={capability.type} />
-              </div>
-
-              <h3>{capability.title}</h3>
-
-              <p className="capability-description">
-                {capability.description}
-              </p>
-
-              <ul className="capability-features">
-                {capability.features.map((feature) => (
-                  <li key={feature}>
-                    <span className="feature-square"></span>
-                    <span>{feature}</span>
-                  </li>
-                ))}
-              </ul>
-
-            </article>
-          ))}
-
-        </div>
-
       </div>
     </section>
   );
