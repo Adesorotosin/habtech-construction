@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import "./Navbar.css";
-import { NavLink } from "react-router-dom";
+import { NavLink, useLocation } from "react-router-dom";
 
 const navigation = [
   { label: "HOME", to: "/" },
@@ -16,6 +16,7 @@ const navigation = [
 function Navbar({ onOpenQuote }) {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
+  const { pathname } = useLocation();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -32,6 +33,10 @@ function Navbar({ onOpenQuote }) {
   const closeMenu = () => {
     setMenuOpen(false);
   };
+
+  useEffect(() => {
+    setMenuOpen(false);
+  }, [pathname]);
 
   const handleQuoteClick = () => {
     closeMenu();
@@ -75,6 +80,7 @@ function Navbar({ onOpenQuote }) {
           onClick={() => setMenuOpen((previous) => !previous)}
           aria-label="Toggle navigation menu"
           aria-expanded={menuOpen}
+          aria-controls="mobile-navigation"
         >
           <span></span>
           <span></span>
@@ -82,7 +88,11 @@ function Navbar({ onOpenQuote }) {
         </button>
       </div>
 
-      <div className={`mobile-menu ${menuOpen ? "mobile-menu-open" : ""}`}>
+      <div
+        id="mobile-navigation"
+        className={`mobile-menu ${menuOpen ? "mobile-menu-open" : ""}`}
+        aria-hidden={!menuOpen}
+      >
         {navigation.map((item) => (
           <NavLink
             key={item.to}
