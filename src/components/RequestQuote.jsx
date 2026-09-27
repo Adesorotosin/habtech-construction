@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import "./RequestQuote.css";
 
 const INITIAL_FORM = {
@@ -21,12 +21,19 @@ function RequestQuote({ isOpen, onClose }) {
   const [projectFile, setProjectFile] = useState(null);
   const [submitting, setSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState(null);
+  const closeButtonRef = useRef(null);
+  const previousActiveElementRef = useRef(null);
 
   useEffect(() => {
-    document.body.style.overflow = isOpen ? "hidden" : "";
+    if (!isOpen) return undefined;
+
+    previousActiveElementRef.current = document.activeElement;
+    document.body.style.overflow = "hidden";
+    closeButtonRef.current?.focus();
 
     return () => {
       document.body.style.overflow = "";
+      previousActiveElementRef.current?.focus?.();
     };
   }, [isOpen]);
 
@@ -146,6 +153,7 @@ function RequestQuote({ isOpen, onClose }) {
           <button
             type="button"
             className="quote-close"
+            ref={closeButtonRef}
             onClick={resetAndClose}
             aria-label="Close quote form"
           >
