@@ -104,9 +104,11 @@ const process = [
   },
 ];
 
-function Services() {
+function Services({ onOpenQuote, embedded = false }) {
+  const PageContainer = embedded ? "section" : "main";
+
   return (
-    <main className="services-page">
+    <PageContainer className="services-page">
       <section className="services-hero">
         <div className="services-hero-content">
           <span className="services-eyebrow">OUR SERVICES</span>
@@ -120,10 +122,14 @@ function Services() {
           </p>
 
           <div className="services-hero-actions">
-            <Link to="/contact" className="services-primary-button">
+            <button
+              type="button"
+              className="services-primary-button"
+              onClick={onOpenQuote}
+            >
               Discuss Your Project
               <ArrowRight size={18} />
-            </Link>
+            </button>
             <Link to="/boq-estimation" className="services-secondary-button">
               Explore BOQ & Estimation
             </Link>
@@ -265,12 +271,16 @@ function Services() {
           </p>
         </div>
 
-        <Link to="/contact" className="services-cta-button">
+        <button
+          type="button"
+          className="services-cta-button"
+          onClick={onOpenQuote}
+        >
           Get a Quote
           <ArrowRight size={18} />
-        </Link>
+        </button>
       </section>
-    </main>
+    </PageContainer>
   );
 }
 
