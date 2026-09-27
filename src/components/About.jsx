@@ -93,6 +93,28 @@ export default function About({ onOpenQuote }) {
         </div>
       </section>
 
+      <section className="about-vision-goals">
+        <div className="about-vision-goal-card">
+          <span className="about-section-kicker">OUR VISION</span>
+          <h2>To be a trusted and leading construction company in Nigeria.</h2>
+          <p>
+            To be a trusted and leading construction company in Nigeria,
+            recognized for quality, innovation, and buildings that stand the
+            test of time.
+          </p>
+        </div>
+
+        <div className="about-vision-goal-card">
+          <span className="about-section-kicker">OUR GOAL</span>
+          <h2>To deliver projects that create lasting value.</h2>
+          <p>
+            To consistently deliver durable, cost-effective, and high-quality
+            projects while building lasting relationships and establishing
+            Habtech Construction as a trusted name in the industry.
+          </p>
+        </div>
+      </section>
+
       <section className="safety-section">
         <div className="safety-intro">
           <h2>
