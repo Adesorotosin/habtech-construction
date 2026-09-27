@@ -210,3 +210,59 @@
   }
 
 }
+
+/* Updated CTA content */
+.cta-eyebrow {
+  display: inline-block;
+  margin-bottom: 18px;
+  color: #ff641f;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+}
+
+.cta-description {
+  max-width: 680px;
+  margin: 30px 0 0;
+  color: #5f6870;
+  font-size: 17px;
+  line-height: 1.7;
+  text-align: center;
+}
+
+.cta-points {
+  width: 100%;
+  max-width: 850px;
+  margin-top: 38px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+}
+
+.cta-points span {
+  padding: 10px 14px;
+  border: 1px solid #dce2e6;
+  color: #07558a;
+  background: #fff;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+}
+
+@media (max-width: 600px) {
+  .cta-description {
+    font-size: 15px;
+  }
+
+  .cta-points {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .cta-points span {
+    width: 100%;
+    text-align: center;
+    box-sizing: border-box;
+  }
+}
