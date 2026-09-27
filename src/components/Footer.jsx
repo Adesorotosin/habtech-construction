@@ -50,9 +50,7 @@ function Footer({ onOpenQuote }) {
             <span className="contact-icon">⌖</span>
 
             <p>
-              123, Industrial Road,
-              <br />
-              Ibadan
+              Ibadan, Nigeria
             </p>
 
           </div>
