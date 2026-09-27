@@ -47,16 +47,23 @@ function Footer({ onOpenQuote }) {
 
           <div className="contact-item">
 
-            <span className="contact-icon" aria-hidden="true">
-              ◎
-            </span>
-
             <a
               href="https://www.instagram.com/habtechenterprise?stkn=am9sYmdubjZmbHVl&utm_source=qr"
               target="_blank"
               rel="noreferrer"
+              aria-label="Habtech Construction on Instagram"
+              className="instagram-link"
             >
-              Instagram
+              <svg
+                className="instagram-logo"
+                viewBox="0 0 24 24"
+                aria-hidden="true"
+                focusable="false"
+              >
+                <rect x="3" y="3" width="18" height="18" rx="5" />
+                <circle cx="12" cy="12" r="4.25" />
+                <circle cx="17.5" cy="6.5" r="1" className="instagram-dot" />
+              </svg>
             </a>
 
           </div>
