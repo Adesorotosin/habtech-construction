@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import "./Blog.css";
 
 const POSTS_DATA = [
@@ -140,9 +141,9 @@ const Blog = () => {
               materials, cost, site management, maintenance and more.
             </p>
           </div>
-          <a className="read-more-btn" href="/construction-guide">
+          <Link className="read-more-btn" to="/construction-guide">
             EXPLORE THE GUIDE →
-          </a>
+          </Link>
         </div>
       </section>
     </div>
