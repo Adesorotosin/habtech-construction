@@ -7,17 +7,15 @@ export default function About({ onOpenQuote }) {
     <main className="about-container">
       <section className="about-hero">
         <div className="about-hero-left">
-          <span className="est-badge">EST 2023</span>
           <h1 className="about-title">
             BUILT FOR
             <br />
             <span className="title-muted">PERMANENCE.</span>
           </h1>
           <p className="about-description">
-            We don’t just assemble structures; we engineer legacies. For years,
-            Habtech Construction has defined the skyline through rigorous
-            precision and an uncompromising commitment to the craft of
-            construction.
+            Habtech Construction provides practical support across planning,
+            estimation, construction, supervision, renovation, and property
+            improvement, with a focus on clear decisions and responsible execution.
           </p>
         </div>
 
@@ -35,7 +33,7 @@ export default function About({ onOpenQuote }) {
         <div className="blueprint-left">
           <div className="blueprint-accent-bar"></div>
           <div className="blueprint-main">
-            <h2>Our Three-Year Blueprint</h2>
+            <h2>Our Blueprint</h2>
 
             <div className="blueprint-columns">
               <p>
