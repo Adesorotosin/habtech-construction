@@ -59,7 +59,7 @@ function Home({ onOpenQuote }) {
 
       <Capabilities />
 
-      <Services />
+      <Services embedded onOpenQuote={onOpenQuote} />
 
       <Portfolio />
 
