@@ -14,6 +14,7 @@ import Home from "./components/Home";
 import ConstructionGuide from "./components/ConstructionGuide";
 import CostCalculator from "./components/CostCalculator";
 import BOQEstimation from "./components/BOQEstimation";
+import NotFound from "./components/NotFound";
 
 function ScrollToTop() {
   const { pathname } = useLocation();
@@ -56,6 +57,7 @@ function App() {
           path="/boq-estimation"
           element={<BOQEstimation onOpenQuote={openQuote} />}
         />
+        <Route path="*" element={<NotFound />} />
       </Routes>
 
       <Footer onOpenQuote={openQuote} />
