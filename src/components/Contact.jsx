@@ -40,7 +40,7 @@ const Contact = ({ onOpenQuote }) => {
 
             <div className="office-card">
               <h3>Central Engineering Hub</h3>
-              <p>123, Ibadan Road</p>
+              <p>Ibadan, Nigeria</p>
             </div>
 
             <div className="contact-sub-cards">
