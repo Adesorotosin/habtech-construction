@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import "./Blog.css";
 
 const POSTS_DATA = [
@@ -91,13 +92,13 @@ const Blog = () => {
             </div>
             <h2 className="featured-title">{featuredPost.title}</h2>
             <p className="featured-excerpt">{featuredPost.excerpt}</p>
-            <button className="read-more-btn">READ ARTICLE →</button>
+            <a className="read-more-btn" href="#articles">EXPLORE ARTICLES →</a>
           </div>
         </div>
       </section>
 
       {/* ================= FILTER & POSTS GRID ================= */}
-      <section className="blog-grid-section">
+      <section className="blog-grid-section" id="articles">
         {/* Category Filters */}
         <div className="category-filter-bar">
           {CATEGORIES.map((cat) => (
