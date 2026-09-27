@@ -21,9 +21,8 @@
 }
 
 .portfolio-container {
-  max-width: 1200px;
+  width: min(1200px, calc(100% - 80px));
   margin: 0 auto;
-  padding: 0 5rem;
   box-sizing: border-box;
 }
 
@@ -187,4 +186,133 @@ a.portfolio-btn:hover {
   background-color: #004b87;
   color: #ffffff;
   text-decoration: none !important;
+}
+
+/* =========================================
+   MOBILE PORTFOLIO
+========================================= */
+@media (max-width: 800px) {
+  .portfolio-section {
+    padding: 70px 0 80px;
+  }
+
+  .portfolio-container {
+    width: calc(100% - 32px);
+  }
+
+  .portfolio-header {
+    margin-bottom: 32px;
+    text-align: left;
+  }
+
+  .portfolio-title {
+    font-size: clamp(30px, 9vw, 38px);
+    line-height: 1;
+    letter-spacing: -0.04em;
+    margin-bottom: 12px;
+  }
+
+  .portfolio-subtitle {
+    max-width: 100%;
+    font-size: 14px;
+    line-height: 1.6;
+  }
+
+  .portfolio-grid {
+    grid-template-columns: 1fr;
+    gap: 14px;
+    margin-bottom: 34px;
+  }
+
+  .portfolio-right-col {
+    gap: 14px;
+  }
+
+  .portfolio-bottom-row {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+
+  .card-tall {
+    height: 340px;
+  }
+
+  .card-wide {
+    height: 240px;
+  }
+
+  .card-small {
+    height: 220px;
+  }
+
+  .portfolio-tag {
+    bottom: 16px !important;
+    left: 16px !important;
+    padding: 7px 12px !important;
+    font-size: 11px !important;
+  }
+
+  .card-small .tag-orange {
+    bottom: 48px !important;
+  }
+
+  .portfolio-text-overlay {
+    bottom: 17px;
+    left: 16px;
+    font-size: 13px;
+  }
+
+  .portfolio-btn {
+    width: 100%;
+    padding: 14px 18px;
+    text-align: center;
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 520px) {
+  .portfolio-section {
+    padding: 58px 0 68px;
+  }
+
+  .portfolio-container {
+    width: calc(100% - 24px);
+  }
+
+  .portfolio-title {
+    font-size: 32px;
+  }
+
+  .portfolio-subtitle {
+    font-size: 13px;
+  }
+
+  .card-tall {
+    height: 300px;
+  }
+
+  .card-wide {
+    height: 205px;
+  }
+
+  .card-small {
+    height: 195px;
+  }
+
+  .portfolio-tag {
+    bottom: 13px !important;
+    left: 13px !important;
+    padding: 6px 10px !important;
+    font-size: 10px !important;
+  }
+
+  .card-small .tag-orange {
+    bottom: 42px !important;
+  }
+
+  .portfolio-text-overlay {
+    bottom: 14px;
+    left: 13px;
+    font-size: 11px;
+  }
 }
