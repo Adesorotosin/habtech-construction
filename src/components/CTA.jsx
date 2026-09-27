@@ -1,87 +1,27 @@
-import { useEffect, useRef, useState } from "react";
 import "./CTA.css";
-
-function AnimatedNumber({ value, suffix = "", duration = 2000 }) {
-  const [count, setCount] = useState(0);
-  const [hasStarted, setHasStarted] = useState(false);
-  const numberRef = useRef(null);
-
-  useEffect(() => {
-    const element = numberRef.current;
-
-    if (!element) return;
-
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting && !hasStarted) {
-          setHasStarted(true);
-        }
-      },
-      {
-        threshold: 0.5,
-      }
-    );
-
-    observer.observe(element);
-
-    return () => observer.disconnect();
-  }, [hasStarted]);
-
-  useEffect(() => {
-    if (!hasStarted) return;
-
-    const startTime = performance.now();
-
-    const animate = (currentTime) => {
-      const elapsed = currentTime - startTime;
-      const progress = Math.min(elapsed / duration, 1);
-      const easedProgress = 1 - Math.pow(1 - progress, 3);
-      const currentValue = value * easedProgress;
-
-      setCount(currentValue);
-
-      if (progress < 1) {
-        requestAnimationFrame(animate);
-      }
-    };
-
-    requestAnimationFrame(animate);
-  }, [hasStarted, value, duration]);
-
-  return (
-    <strong ref={numberRef}>
-      {value === 2.5
-        ? `${count.toFixed(1)}M`
-        : `${Math.floor(count)}${suffix}`}
-    </strong>
-  );
-}
 
 function CTA({ onOpenQuote }) {
   return (
     <section className="cta-section">
       <div className="cta-container">
-        <h2>READY TO LAY THE FIRST STONE?</h2>
+        <span className="cta-eyebrow">START THE CONVERSATION</span>
+
+        <h2>READY TO PLAN YOUR NEXT PROJECT?</h2>
 
         <div className="cta-line">
           <span></span>
         </div>
 
-        <div className="cta-stats">
-          <div className="cta-stat">
-            <AnimatedNumber value={25} suffix="+" />
-            <span>PROJECTS COMPLETED</span>
-          </div>
+        <p className="cta-description">
+          Tell Habtech what you are building, renovating, inspecting, or
+          managing. We can help you identify the right next step.
+        </p>
 
-          <div className="cta-stat">
-            <AnimatedNumber value={2.5} />
-            <span>SAFE WORK HOURS</span>
-          </div>
-
-          <div className="cta-stat">
-            <AnimatedNumber value={100} suffix="%" />
-            <span>COMPLIANCE RECORD</span>
-          </div>
+        <div className="cta-points">
+          <span>PROJECT PLANNING</span>
+          <span>BOQ & ESTIMATION</span>
+          <span>SITE SUPERVISION</span>
+          <span>PROPERTY INSPECTION</span>
         </div>
 
         <button
@@ -89,7 +29,7 @@ function CTA({ onOpenQuote }) {
           className="cta-button"
           onClick={onOpenQuote}
         >
-          GET A BID PROPOSAL
+          GET A QUOTE
         </button>
       </div>
     </section>
