@@ -1,6 +1,7 @@
 import "./Footer.css";
+import { Link } from "react-router-dom";
 
-function Footer() {
+function Footer({ onOpenQuote }) {
   return (
     <footer className="footer">
 
@@ -29,10 +30,11 @@ function Footer() {
           <h3>QUICK LINK</h3>
 
           <div className="footer-links">
-            <a href="#contact">Bidding Portals</a>
-            <a href="#services">Safety Standards</a>
-            <a href="#services">Sustainability</a>
-            <a href="#contact">Careers</a>
+            <Link to="/services">Services</Link>
+            <Link to="/construction-guide">Construction Guide</Link>
+            <Link to="/cost-calculator">Cost Calculator</Link>
+            <Link to="/boq-estimation">BOQ & Estimation</Link>
+            <Link to="/contact">Contact</Link>
           </div>
 
         </div>
@@ -66,6 +68,10 @@ function Footer() {
 
           </div>
 
+          <button type="button" className="footer-quote-button" onClick={onOpenQuote}>
+            Request a Quote
+          </button>
+
         </div>
 
       </div>
@@ -75,7 +81,7 @@ function Footer() {
       <div className="footer-bottom">
 
         <p>
-          © 2035 Habtech Construction. All rights reserved.
+          © {new Date().getFullYear()} Habtech Construction. All rights reserved.
         </p>
 
       </div>
