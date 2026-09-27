@@ -2,10 +2,9 @@ import React from "react";
 import { Link } from "react-router-dom";
 import "./About.css";
 
-export default function About({ onOpenBidModal }) {
+export default function About({ onOpenQuote }) {
   return (
     <main className="about-container">
-      {/* ABOUT HERO SECTION */}
       <section className="about-hero">
         <div className="about-hero-left">
           <span className="est-badge">EST 2023</span>
@@ -32,7 +31,6 @@ export default function About({ onOpenBidModal }) {
         </div>
       </section>
 
-      {/* THREE-YEAR BLUEPRINT & MISSION SECTION */}
       <section className="about-blueprint-section">
         <div className="blueprint-left">
           <div className="blueprint-accent-bar"></div>
@@ -95,7 +93,6 @@ export default function About({ onOpenBidModal }) {
         </div>
       </section>
 
-      {/* SAFETY SECTION */}
       <section className="safety-section">
         <div className="safety-intro">
           <h2>
@@ -178,7 +175,6 @@ export default function About({ onOpenBidModal }) {
         </div>
       </section>
 
-      {/* ABOUT CTA SECTION */}
       <section className="about-cta">
         <h2>
           Ready to Build for the Next<br />
@@ -187,10 +183,10 @@ export default function About({ onOpenBidModal }) {
         <p>Partner with the firm that values stability as much as you do.</p>
         
         <div className="cta-actions">
-          <button 
-            type="button" 
+          <button
+            type="button"
             className="btn-primary"
-            onClick={onOpenBidModal}
+            onClick={onOpenQuote}
           >
             START A BID REQUEST
           </button>
