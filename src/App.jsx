@@ -14,6 +14,9 @@ import About from "./components/About";
 import Services from "./components/Services";
 import Contact from "./components/Contact";
 import Blog from "./components/Blog";
+import ConstructionGuide from "./components/ConstructionGuide";
+import CostCalculator from "./components/CostCalculator";
+import BOQEstimation from "./components/BOQEstimation";
 
 import BidModal from "./components/BidModal";
 
@@ -54,18 +57,20 @@ function App() {
       <Routes>
         <Route path="/" element={<Home onOpenBidModal={openBidModal} />} />
         <Route path="/projects" element={<Projects />} />
-        <Route 
-          path="/about" 
-          element={<About onOpenBidModal={openBidModal} />} 
+        <Route
+          path="/about"
+          element={<About onOpenBidModal={openBidModal} />}
         />
         <Route path="/services" element={<Services />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/blog" element={<Blog />} />
+        <Route path="/construction-guide" element={<ConstructionGuide />} />
+        <Route path="/cost-calculator" element={<CostCalculator />} />
+        <Route path="/boq-estimation" element={<BOQEstimation />} />
       </Routes>
 
       <Footer />
 
-      {/* FIXED: Added isOpen prop here */}
       <BidModal isOpen={isBidModalOpen} onClose={closeBidModal} />
     </BrowserRouter>
   );
