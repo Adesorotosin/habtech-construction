@@ -25,7 +25,7 @@ const GUIDE_PREVIEWS = [
   },
 ];
 
-function Home({ onOpenBidModal }) {
+function Home({ onOpenQuote }) {
   return (
     <main className="home-page">
       <section className="home-hero-wrap">
@@ -42,7 +42,7 @@ function Home({ onOpenBidModal }) {
           </p>
 
           <div className="home-hero-actions">
-            <button type="button" onClick={onOpenBidModal}>
+            <button type="button" onClick={onOpenQuote}>
               REQUEST A QUOTE <ArrowUpRight size={18} />
             </button>
             <Link to="/services">
@@ -147,16 +147,16 @@ function Home({ onOpenBidModal }) {
               </p>
             </div>
 
-            <Link to="/boq-estimation" className="home-primary-button">
+            <button type="button" className="home-primary-button" onClick={onOpenQuote}>
               REQUEST PROFESSIONAL BOQ <ArrowUpRight size={18} />
-            </Link>
+            </button>
           </div>
         </div>
       </section>
 
       <Testimonials />
 
-      <CTA />
+      <CTA onOpenQuote={onOpenQuote} />
     </main>
   );
 }
