@@ -135,6 +135,38 @@
   color: #ff641f;
 }
 
+.instagram-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: #111111;
+  text-decoration: none;
+  line-height: 0;
+}
+
+.instagram-logo {
+  width: 25px;
+  height: 25px;
+  display: block;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.8;
+  transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.instagram-logo .instagram-dot {
+  fill: currentColor;
+  stroke: none;
+}
+
+.instagram-link:hover {
+  color: #ff641f;
+}
+
+.instagram-link:hover .instagram-logo {
+  transform: translateY(-1px);
+}
+
 
 /* =========================
    FOOTER BOTTOM
