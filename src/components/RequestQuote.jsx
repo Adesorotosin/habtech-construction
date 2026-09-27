@@ -1,6 +1,8 @@
 import { useEffect, useRef, useState } from "react";
 import "./RequestQuote.css";
 
+const MAX_FILE_SIZE = 10 * 1024 * 1024;
+
 const INITIAL_FORM = {
   fullName: "",
   email: "",
@@ -66,8 +68,24 @@ function RequestQuote({ isOpen, onClose }) {
 
   const handleFileChange = (event) => {
     const file = event.target.files?.[0] || null;
-    setProjectFile(file);
     setSubmitStatus(null);
+
+    if (!file) {
+      setProjectFile(null);
+      return;
+    }
+
+    if (file.size > MAX_FILE_SIZE) {
+      event.target.value = "";
+      setProjectFile(null);
+      setSubmitStatus({
+        type: "error",
+        message: "That file is larger than 10 MB. Please choose a smaller file.",
+      });
+      return;
+    }
+
+    setProjectFile(file);
   };
 
   const handleSubmit = async (event) => {
@@ -130,7 +148,7 @@ function RequestQuote({ isOpen, onClose }) {
       className="quote-overlay"
       onMouseDown={(event) => {
         if (event.target === event.currentTarget) {
-          onClose();
+          resetAndClose();
         }
       }}
     >
