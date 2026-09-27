@@ -134,6 +134,10 @@ function CostCalculator() {
             details. Use this as an early planning guide before requesting a
             professional assessment.
           </p>
+          <p className="calculator-assumption-note">
+            Planning model only: the rates and multipliers currently used are
+            illustrative assumptions, not confirmed Habtech project rates.
+          </p>
         </div>
       </section>
 
@@ -288,8 +292,9 @@ function CostCalculator() {
 
             <div className="estimate-disclaimer">
               <strong>Important:</strong> This calculator provides preliminary
-              estimates only. A professional BOQ and site-specific assessment
-              are required for an accurate project cost.
+              estimates only. The current calculation model uses illustrative
+              assumptions. A professional BOQ and site-specific assessment are
+              required for an accurate project cost.
             </div>
 
             <Link className="boq-link" to="/boq-estimation">
