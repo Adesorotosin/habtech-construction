@@ -1,4 +1,5 @@
 import { useMemo, useState } from "react";
+import { Link } from "react-router-dom";
 import { ArrowUpRight, BookOpen, Search } from "lucide-react";
 import "./ConstructionGuide.css";
 
@@ -162,13 +163,13 @@ function ConstructionGuide() {
           <span>{GUIDES[0].category}</span>
           <h3>{GUIDES[0].title}</h3>
           <p>{GUIDES[0].excerpt}</p>
-          <button type="button">
+          <a href="#guide-library">
             READ GUIDE <ArrowUpRight size={17} />
-          </button>
+          </a>
         </div>
       </section>
 
-      <section className="guide-library">
+      <section className="guide-library" id="guide-library">
         <div className="guide-library-heading">
           <div>
             <span className="section-kicker">THE LIBRARY</span>
@@ -214,9 +215,9 @@ function ConstructionGuide() {
               <h3>{guide.title}</h3>
               <p>{guide.excerpt}</p>
 
-              <button type="button" className="guide-read-button">
+              <a href="#guide-library" className="guide-read-button">
                 READ GUIDE <ArrowUpRight size={17} />
-              </button>
+              </a>
             </article>
           ))}
         </div>
@@ -239,9 +240,9 @@ function ConstructionGuide() {
           </p>
         </div>
 
-        <a href="/boq-estimation" className="guide-cta-button">
+        <Link to="/boq-estimation" className="guide-cta-button">
           REQUEST PROFESSIONAL BOQ <ArrowUpRight size={18} />
-        </a>
+        </Link>
       </section>
     </main>
   );
