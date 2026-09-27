@@ -3,6 +3,17 @@ import "./Navbar.css";
 import RequestQuote from "./RequestQuote";
 import { NavLink } from "react-router-dom";
 
+const navigation = [
+  { label: "HOME", to: "/" },
+  { label: "PROJECTS", to: "/projects" },
+  { label: "SERVICES", to: "/services" },
+  { label: "GUIDE", to: "/construction-guide" },
+  { label: "CALCULATOR", to: "/cost-calculator" },
+  { label: "BOQ", to: "/boq-estimation" },
+  { label: "ABOUT", to: "/about" },
+  { label: "CONTACT", to: "/contact" },
+];
+
 function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [quoteOpen, setQuoteOpen] = useState(false);
@@ -32,79 +43,38 @@ function Navbar() {
   return (
     <nav className={`navbar ${scrolled ? "navbar-scrolled" : ""}`}>
       <div className="navbar-container">
-        {/* HABTECH Logo */}
-        <NavLink
-          to="/"
-          className="navbar-logo"
-          onClick={closeMenu}
-        >
+        <NavLink to="/" className="navbar-logo" onClick={closeMenu}>
           <img
             src="/assets/Habtech logo.jpg"
             alt="HABTECH Construction"
           />
         </NavLink>
 
-        {/* DESKTOP NAVIGATION */}
         <div className="nav-links">
-          <NavLink
-            to="/"
-            end
-            className={({ isActive }) => (isActive ? "active" : "")}
-          >
-            HOME
-          </NavLink>
-
-          <NavLink
-            to="/projects"
-            className={({ isActive }) => (isActive ? "active" : "")}
-          >
-            PROJECTS
-          </NavLink>
-
-          <NavLink
-            to="/about"
-            className={({ isActive }) => (isActive ? "active" : "")}
-          >
-            ABOUT
-          </NavLink>
-
-          <NavLink
-            to="/services"
-            className={({ isActive }) => (isActive ? "active" : "")}
-          >
-            SERVICES
-          </NavLink>
-
-          <NavLink
-            to="/contact"
-            className={({ isActive }) => (isActive ? "active" : "")}
-          >
-            CONTACT
-          </NavLink>
-
-          {/* CHANGED FROM <a href="#blog"> TO NavLink */}
-          <NavLink
-            to="/blog"
-            className={({ isActive }) => (isActive ? "active" : "")}
-          >
-            BLOG
-          </NavLink>
+          {navigation.map((item) => (
+            <NavLink
+              key={item.to}
+              to={item.to}
+              end={item.to === "/"}
+              className={({ isActive }) => (isActive ? "active" : "")}
+            >
+              {item.label}
+            </NavLink>
+          ))}
         </div>
 
-        {/* DESKTOP REQUEST QUOTE */}
         <button
           type="button"
           className="quote-button"
-          onClick={() => setQuoteOpen(true)}
+          onClick={handleQuoteClick}
         >
           Request a quote
         </button>
 
-        {/* MOBILE HAMBURGER */}
         <button
           type="button"
           className={`hamburger ${menuOpen ? "open" : ""}`}
-          onClick={() => setMenuOpen(!menuOpen)}
+          onClick={() => setMenuOpen((previous) => !previous)}
           aria-label="Toggle navigation menu"
           aria-expanded={menuOpen}
         >
@@ -114,59 +84,29 @@ function Navbar() {
         </button>
       </div>
 
-      {/* MOBILE MENU */}
       <div className={`mobile-menu ${menuOpen ? "mobile-menu-open" : ""}`}>
-        <NavLink
-          to="/"
-          end
-          onClick={closeMenu}
-          className={({ isActive }) => (isActive ? "active" : "")}
-        >
-          HOME
-        </NavLink>
+        {navigation.map((item) => (
+          <NavLink
+            key={item.to}
+            to={item.to}
+            end={item.to === "/"}
+            onClick={closeMenu}
+            className={({ isActive }) => (isActive ? "active" : "")}
+          >
+            {item.label}
+          </NavLink>
+        ))}
 
-        <NavLink
-          to="/projects"
-          onClick={closeMenu}
-          className={({ isActive }) => (isActive ? "active" : "")}
+        <button
+          type="button"
+          className="mobile-quote"
+          onClick={handleQuoteClick}
         >
-          PROJECTS
-        </NavLink>
-
-        <NavLink
-          to="/about"
-          onClick={closeMenu}
-          className={({ isActive }) => (isActive ? "active" : "")}
-        >
-          ABOUT
-        </NavLink>
-
-        <NavLink
-          to="/services"
-          onClick={closeMenu}
-          className={({ isActive }) => (isActive ? "active" : "")}
-        >
-          SERVICES
-        </NavLink>
-
-        <NavLink
-          to="/contact"
-          onClick={closeMenu}
-          className={({ isActive }) => (isActive ? "active" : "")}
-        >
-          CONTACT
-        </NavLink>
-
-        <NavLink
-          to="/blog"
-          onClick={closeMenu}
-          className={({ isActive }) => (isActive ? "active" : "")}
-        >
-          BLOG
-        </NavLink>
+          Request a quote
+          <span>→</span>
+        </button>
       </div>
 
-      {/* REQUEST QUOTE MODAL */}
       <RequestQuote
         isOpen={quoteOpen}
         onClose={() => setQuoteOpen(false)}
