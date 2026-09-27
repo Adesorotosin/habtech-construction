@@ -58,7 +58,7 @@ function App() {
         />
       </Routes>
 
-      <Footer />
+      <Footer onOpenQuote={openQuote} />
 
       <RequestQuote
         isOpen={isQuoteOpen}
