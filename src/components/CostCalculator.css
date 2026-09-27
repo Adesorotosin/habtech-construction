@@ -409,3 +409,13 @@
     min-height: 135px;
   }
 }
+
+
+.calculator-assumption-note {
+  margin-top: 14px;
+  max-width: 760px;
+  color: #07558a;
+  font-size: 13px;
+  line-height: 1.6;
+  font-weight: 600;
+}
