@@ -1,124 +1,72 @@
-/* =========================
-   QUOTE OVERLAY
-========================= */
-
 .quote-overlay {
   position: fixed;
-
   inset: 0;
-
   z-index: 3000;
-
   display: flex;
   align-items: center;
   justify-content: center;
-
   padding: 30px;
-
   background: rgba(0, 0, 0, 0.58);
-
   backdrop-filter: blur(4px);
-
   overflow-y: auto;
 }
-
-
-/* =========================
-   MODAL
-========================= */
 
 .quote-modal {
   position: relative;
-
   width: 100%;
-  max-width: 850px;
-
+  max-width: 900px;
   max-height: calc(100vh - 60px);
-
   overflow-y: auto;
-
   background: #ffffff;
-
   box-shadow: 0 20px 60px rgba(0, 0, 0, 0.25);
 }
 
-
-/* =========================
-   MODAL HEADER
-========================= */
-
 .quote-modal-header {
   position: relative;
-
   padding: 35px 40px 30px;
-
   background: #07558a;
-
   color: #ffffff;
 }
 
 .quote-eyebrow {
   margin: 0 0 8px;
-
-  color: #ff641f;
-
+  color: #ff8a5b;
   font-family: "Space Grotesk", sans-serif;
-  font-size: 13px;
+  font-size: 12px;
   font-weight: 700;
-
   letter-spacing: 1px;
 }
 
 .quote-modal-header h2 {
   margin: 0;
-
   font-family: "Space Grotesk", sans-serif;
-  font-size: 32px;
+  font-size: 34px;
   font-weight: 700;
 }
 
 .quote-intro {
-  max-width: 600px;
-
+  max-width: 650px;
   margin: 10px 0 0;
-
-  color: rgba(255, 255, 255, 0.9);
-
+  color: rgba(255, 255, 255, 0.88);
   font-family: "Space Grotesk", sans-serif;
   font-size: 15px;
   line-height: 1.6;
 }
 
-
-/* =========================
-   CLOSE BUTTON
-========================= */
-
 .quote-close {
   position: absolute;
-
   top: 25px;
   right: 25px;
-
   width: 38px;
   height: 38px;
-
   border: 1px solid rgba(255, 255, 255, 0.5);
-
   background: transparent;
-
   color: #ffffff;
-
   font-size: 27px;
   font-weight: 300;
-
   line-height: 1;
-
   cursor: pointer;
-
-  transition:
-    background-color 0.2s ease,
-    color 0.2s ease;
+  transition: background-color 0.2s ease, color 0.2s ease;
 }
 
 .quote-close:hover {
@@ -126,57 +74,36 @@
   color: #07558a;
 }
 
-
-/* =========================
-   FORM
-========================= */
-
 .quote-form {
   padding: 35px 40px 40px;
 }
 
 .quote-section-title {
   margin: 0 0 18px;
-
   color: #07558a;
-
   font-family: "Space Grotesk", sans-serif;
   font-size: 18px;
   font-weight: 700;
 }
 
 .quote-section-title:not(:first-child) {
-  margin-top: 32px;
+  margin-top: 34px;
 }
-
-
-/* =========================
-   FORM GRID
-========================= */
 
 .quote-form-grid {
   display: grid;
-
   grid-template-columns: repeat(2, 1fr);
-
   gap: 20px;
 }
-
-
-/* =========================
-   FORM FIELDS
-========================= */
 
 .quote-field {
   display: flex;
   flex-direction: column;
-
   gap: 8px;
 }
 
 .quote-field label {
   color: #222222;
-
   font-family: "Space Grotesk", sans-serif;
   font-size: 14px;
   font-weight: 600;
@@ -186,27 +113,16 @@
 .quote-field select,
 .quote-field textarea {
   width: 100%;
-
   box-sizing: border-box;
-
   padding: 13px 14px;
-
   border: 1px solid #d7dce0;
-
   border-radius: 2px;
-
   background: #ffffff;
-
   color: #111111;
-
   font-family: "Space Grotesk", sans-serif;
   font-size: 15px;
-
   outline: none;
-
-  transition:
-    border-color 0.2s ease,
-    box-shadow 0.2s ease;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
 }
 
 .quote-field input,
@@ -216,9 +132,7 @@
 
 .quote-field textarea {
   resize: vertical;
-
   min-height: 110px;
-
   line-height: 1.5;
 }
 
@@ -226,7 +140,6 @@
 .quote-field select:focus,
 .quote-field textarea:focus {
   border-color: #07558a;
-
   box-shadow: 0 0 0 3px rgba(7, 85, 138, 0.1);
 }
 
@@ -235,86 +148,102 @@
   color: #999999;
 }
 
+.quote-file-field {
+  margin-top: 20px;
+}
 
-/* =========================
-   SUBMIT AREA
-========================= */
+.quote-file-field input[type="file"] {
+  height: auto;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.quote-file-field small {
+  color: #7a858c;
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+.quote-file-name {
+  display: block;
+  color: #07558a;
+  font-size: 12px;
+  font-weight: 600;
+  overflow-wrap: anywhere;
+}
+
+.quote-status {
+  margin-top: 24px;
+  padding: 14px 16px;
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.quote-status-success {
+  border: 1px solid #b9dec7;
+  background: #eef9f2;
+  color: #176b3b;
+}
+
+.quote-status-error {
+  border: 1px solid #efc0b7;
+  background: #fff4f1;
+  color: #a33a27;
+}
 
 .quote-submit-area {
   display: flex;
-
   align-items: center;
   justify-content: space-between;
-
   gap: 30px;
-
   margin-top: 35px;
-
   padding-top: 25px;
-
   border-top: 1px solid #e5e5e5;
 }
 
 .quote-submit-area p {
   max-width: 480px;
-
   margin: 0;
-
   color: #777777;
-
   font-family: "Space Grotesk", sans-serif;
   font-size: 12px;
-
   line-height: 1.5;
 }
 
 .quote-submit {
   flex-shrink: 0;
-
   display: inline-flex;
-
   align-items: center;
   justify-content: center;
-
   gap: 15px;
-
   padding: 15px 24px;
-
   border: none;
-
   background: #ff641f;
-
   color: #ffffff;
-
   font-family: "Space Grotesk", sans-serif;
   font-size: 15px;
   font-weight: 700;
-
   cursor: pointer;
-
-  transition:
-    background-color 0.2s ease,
-    transform 0.2s ease;
+  transition: background-color 0.2s ease, transform 0.2s ease;
 }
 
 .quote-submit span {
   font-size: 20px;
 }
 
-.quote-submit:hover {
+.quote-submit:hover:not(:disabled) {
   background: #e95212;
-
   transform: translateY(-2px);
 }
 
-
-/* =========================
-   MOBILE
-========================= */
+.quote-submit:disabled {
+  opacity: 0.65;
+  cursor: wait;
+}
 
 @media (max-width: 700px) {
-
   .quote-overlay {
+    align-items: flex-start;
     padding: 15px;
   }
 
@@ -327,6 +256,7 @@
   }
 
   .quote-modal-header h2 {
+    padding-right: 45px;
     font-size: 27px;
   }
 
@@ -336,13 +266,11 @@
 
   .quote-form-grid {
     grid-template-columns: 1fr;
-
     gap: 18px;
   }
 
   .quote-submit-area {
     flex-direction: column;
-
     align-items: stretch;
   }
 
@@ -353,5 +281,21 @@
   .quote-close {
     top: 20px;
     right: 20px;
+  }
+}
+
+@media (max-width: 430px) {
+  .quote-overlay {
+    padding: 0;
+  }
+
+  .quote-modal {
+    max-height: 100vh;
+  }
+
+  .quote-modal-header,
+  .quote-form {
+    padding-left: 20px;
+    padding-right: 20px;
   }
 }
