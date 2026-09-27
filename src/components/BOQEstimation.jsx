@@ -81,7 +81,7 @@ const requiredInformation = [
   "Any known budget or project constraints",
 ];
 
-function BOQEstimation() {
+function BOQEstimation({ onOpenQuote }) {
   return (
     <main className="boq-page">
       <section className="boq-hero">
@@ -95,10 +95,10 @@ function BOQEstimation() {
           </p>
 
           <div className="boq-hero-actions">
-            <Link to="/contact" className="boq-primary-button">
+            <button type="button" className="boq-primary-button" onClick={onOpenQuote}>
               Request Professional BOQ
               <ArrowRight size={18} weight="bold" />
-            </Link>
+            </button>
 
             <Link to="/cost-calculator" className="boq-secondary-button">
               Try Cost Calculator
@@ -249,10 +249,10 @@ function BOQEstimation() {
           </p>
         </div>
 
-        <Link to="/contact" className="boq-primary-button boq-cta-button">
+        <button type="button" className="boq-primary-button boq-cta-button" onClick={onOpenQuote}>
           Request BOQ
           <ArrowRight size={18} weight="bold" />
-        </Link>
+        </button>
       </section>
 
       <section className="boq-disclaimer">
