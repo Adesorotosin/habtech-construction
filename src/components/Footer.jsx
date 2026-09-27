@@ -17,8 +17,8 @@ function Footer({ onOpenQuote }) {
           />
 
           <p>
-            Engineering solutions for complex structural challenges.
-            Licensed globally for industrial and commercial excellence.
+            Practical construction support for planning, estimation,
+            construction, supervision, renovation, and property improvement.
           </p>
 
         </div>
