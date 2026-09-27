@@ -1,3 +1,62 @@
+
+/* =========================
+   VISION & GOALS
+========================= */
+.about-vision-goals {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.5rem;
+  margin: 5rem 0;
+}
+
+.about-vision-goal-card {
+  position: relative;
+  padding: 2.5rem;
+  background: #f4f6f8;
+  border-top: 4px solid #ff6b00;
+}
+
+.about-section-kicker {
+  display: block;
+  margin-bottom: 1rem;
+  color: #ff6b00;
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+}
+
+.about-vision-goal-card h2 {
+  margin: 0 0 1rem;
+  color: #0b2341;
+  font-size: clamp(1.7rem, 3vw, 2.35rem);
+  line-height: 1.15;
+}
+
+.about-vision-goal-card p {
+  margin: 0;
+  max-width: 60ch;
+  color: #555;
+  font-size: 1rem;
+  line-height: 1.75;
+}
+
+@media (max-width: 900px) {
+  .about-vision-goals {
+    grid-template-columns: 1fr;
+    margin: 3.5rem 0;
+  }
+}
+
+@media (max-width: 600px) {
+  .about-vision-goal-card {
+    padding: 1.75rem;
+  }
+
+  .about-vision-goal-card h2 {
+    font-size: 1.65rem;
+  }
+}
+
 /* Container & Navbar clearance */
 .about-container {
   width: 100%;
