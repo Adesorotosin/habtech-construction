@@ -20,7 +20,7 @@ function RequestQuote({ isOpen, onClose }) {
   const [formData, setFormData] = useState(INITIAL_FORM);
   const [projectFile, setProjectFile] = useState(null);
   const [submitting, setSubmitting] = useState(false);
-  const [submitStatus, setSubmitStatus] = useState("");
+  const [submitStatus, setSubmitStatus] = useState(null);
 
   useEffect(() => {
     document.body.style.overflow = isOpen ? "hidden" : "";
@@ -54,19 +54,19 @@ function RequestQuote({ isOpen, onClose }) {
       [name]: value,
     }));
 
-    setSubmitStatus("");
+    setSubmitStatus(null);
   };
 
   const handleFileChange = (event) => {
     const file = event.target.files?.[0] || null;
     setProjectFile(file);
-    setSubmitStatus("");
+    setSubmitStatus(null);
   };
 
   const handleSubmit = async (event) => {
     event.preventDefault();
     setSubmitting(true);
-    setSubmitStatus("");
+    setSubmitStatus(null);
 
     try {
       const payload = new FormData();
@@ -91,30 +91,26 @@ function RequestQuote({ isOpen, onClose }) {
         throw new Error("Unable to submit quote request");
       }
 
-      setSubmitStatus(
-        "success",
-        "Thank you. HABTECH will review your project enquiry and get back to you."
-      );
+      setSubmitStatus({
+        type: "success",
+        message:
+          "Thank you. HABTECH will review your project enquiry and get back to you.",
+      });
     } catch (error) {
-      setSubmitStatus(
-        "error",
-        "We could not send your request. Please try again or contact HABTECH directly."
-      );
+      setSubmitStatus({
+        type: "error",
+        message:
+          "We could not send your request. Please try again or contact HABTECH directly.",
+      });
     } finally {
       setSubmitting(false);
     }
   };
 
-  const setSubmitStatus = (type, message) => {
-    setSubmitStatusValue({ type, message });
-  };
-
-  const [submitStatusValue, setSubmitStatusValue] = useState(null);
-
   const resetAndClose = () => {
     setFormData(INITIAL_FORM);
     setProjectFile(null);
-    setSubmitStatusValue(null);
+    setSubmitStatus(null);
     onClose();
   };
 
@@ -150,7 +146,7 @@ function RequestQuote({ isOpen, onClose }) {
           <button
             type="button"
             className="quote-close"
-            onClick={onClose}
+            onClick={resetAndClose}
             aria-label="Close quote form"
           >
             ×
@@ -240,11 +236,17 @@ function RequestQuote({ isOpen, onClose }) {
               >
                 <option value="">Select project type</option>
                 <option value="Building construction">Building construction</option>
-                <option value="Construction consultation">Construction consultation</option>
-                <option value="Renovation and remodeling">Renovation and remodeling</option>
+                <option value="Construction consultation">
+                  Construction consultation
+                </option>
+                <option value="Renovation and remodeling">
+                  Renovation and remodeling
+                </option>
                 <option value="Project management">Project management</option>
                 <option value="Site supervision">Site supervision</option>
-                <option value="BOQ and cost estimation">BOQ and cost estimation</option>
+                <option value="BOQ and cost estimation">
+                  BOQ and cost estimation
+                </option>
                 <option value="Property inspection">Property inspection</option>
                 <option value="Other">Other</option>
               </select>
@@ -279,7 +281,9 @@ function RequestQuote({ isOpen, onClose }) {
                 <option value="Foundation">Foundation</option>
                 <option value="Structural works">Structural works</option>
                 <option value="Finishing">Finishing</option>
-                <option value="Renovation in progress">Renovation in progress</option>
+                <option value="Renovation in progress">
+                  Renovation in progress
+                </option>
                 <option value="Completed property">Completed property</option>
               </select>
             </div>
@@ -330,7 +334,9 @@ function RequestQuote({ isOpen, onClose }) {
           </div>
 
           <div className="quote-field">
-            <label htmlFor="additionalRequirements">Additional requirements</label>
+            <label htmlFor="additionalRequirements">
+              Additional requirements
+            </label>
             <textarea
               id="additionalRequirements"
               name="additionalRequirements"
@@ -361,12 +367,12 @@ function RequestQuote({ isOpen, onClose }) {
             )}
           </div>
 
-          {submitStatusValue && (
+          {submitStatus && (
             <div
-              className={`quote-status quote-status-${submitStatusValue.type}`}
+              className={`quote-status quote-status-${submitStatus.type}`}
               role="status"
             >
-              {submitStatusValue.message}
+              {submitStatus.message}
             </div>
           )}
 
