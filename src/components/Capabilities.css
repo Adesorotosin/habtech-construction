@@ -1,16 +1,18 @@
 /* =========================
-   CORE CAPABILITIES
+   WHY HABTECH
 ========================= */
 
 .capabilities {
   width: 100%;
-  background: #f4f4f6;
+  background: #ffffff;
+  color: #0b2341;
 }
 
 .capabilities-container {
-  max-width: 1060px;
+  max-width: 1200px;
   margin: 0 auto;
-  padding: 82px 0 78px;
+  padding: 105px 30px 95px;
+  box-sizing: border-box;
 }
 
 /* =========================
@@ -20,184 +22,220 @@
 .capabilities-header {
   display: flex;
   justify-content: space-between;
-  align-items: flex-start;
+  align-items: flex-end;
+  gap: 50px;
+}
+
+.capabilities-heading {
+  max-width: 850px;
+}
+
+.capabilities-eyebrow {
+  display: inline-flex;
+  margin-bottom: 18px;
+  padding: 7px 11px;
+  border-left: 3px solid #ff6b2c;
+  background: #fff0e9;
+  color: #d94e18;
+  font-size: 0.7rem;
+  font-weight: 900;
+  letter-spacing: 1.4px;
 }
 
 .capabilities-heading h2 {
-  margin: 0 0 16px;
-
-  color: #063d6d;
-
+  max-width: 800px;
+  margin: 0 0 20px;
+  color: #0b2341;
   font-family: "Space Grotesk", sans-serif;
-  font-size: 43px;
-  line-height: 1.15;
-  font-weight: 600;
-  letter-spacing: -1px;
+  font-size: clamp(2.4rem, 4vw, 4.2rem);
+  line-height: 1;
+  font-weight: 700;
+  letter-spacing: -2px;
 }
 
 .capabilities-heading p {
-  max-width: 800px;
+  max-width: 760px;
   margin: 0;
-
-  color: #23415c;
-
+  color: #5c6b79;
   font-family: "Space Grotesk", sans-serif;
-  font-size: 18px;
-  line-height: 1.7;
-  font-weight: 400;
+  font-size: 1rem;
+  line-height: 1.75;
 }
 
-/* =========================
-   DECORATIVE LINES
-========================= */
-
-.capabilities-lines {
+.capabilities-mark {
   display: flex;
-  align-items: center;
-  gap: 9px;
-
-  padding-top: 7px;
+  align-items: flex-end;
+  gap: 7px;
+  padding-bottom: 7px;
   flex-shrink: 0;
 }
 
-.capability-line {
+.capabilities-mark span {
   display: block;
-
-  width: 55px;
-  height: 6px;
-}
-
-.capability-line.orange {
-  background: #f15a24;
-}
-
-.capability-line.blue {
+  width: 7px;
   background: #07558a;
 }
 
+.capabilities-mark span:nth-child(1) {
+  height: 34px;
+  background: #ff6b2c;
+}
+
+.capabilities-mark span:nth-child(2) {
+  height: 52px;
+}
+
+.capabilities-mark span:nth-child(3) {
+  height: 70px;
+}
+
 /* =========================
-   CARDS
+   GRID
 ========================= */
 
-.capability-grid {
+.capabilities-grid {
+  margin-top: 65px;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 39px;
-
-  margin-top: 62px;
+  gap: 16px;
 }
 
 .capability-card {
-  min-height: 365px;
-
-  padding: 28px 14px 30px;
-
-  background: #ffffff;
-}
-
-/* =========================
-   ICON
-========================= */
-
-.capability-icon {
-  width: 64px;
-  height: 64px;
-
-  margin-bottom: 31px;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  border-radius: 50%;
-}
-
-.capability-icon svg {
-  color: #050505;
-}
-
-.capability-card.commercial .capability-icon {
-  background: #e4f3ff;
-}
-
-.capability-card.industrial .capability-icon {
-  background: #fff0e8;
-}
-
-.capability-card.residential .capability-icon {
-  background: #fceaff;
-}
-
-.capability-icon svg {
-  width: 35px;
-  height: 35px;
-
-  fill: #050505;
-  stroke: #050505;
-  stroke-width: 1;
-}
-
-/* =========================
-   CARD TYPOGRAPHY
-========================= */
-
-.capability-card h3 {
-  margin: 0 0 16px;
-
-  color: #063d6d;
-
-  font-family: "Space Grotesk", sans-serif;
-  font-size: 24px;
-  line-height: 1.2;
-  font-weight: 600;
-}
-
-.capability-description {
-  margin: 0;
-
-  color: #23415c;
-
-  font-family: "Space Grotesk", sans-serif;
-  font-size: 17px;
-  line-height: 1.6;
-  font-weight: 400;
-}
-
-/* =========================
-   FEATURES
-========================= */
-
-.capability-features {
+  position: relative;
+  min-height: 300px;
+  padding: 28px;
   display: flex;
   flex-direction: column;
-  gap: 7px;
-
-  margin: 34px 0 0;
-  padding: 0;
-
-  list-style: none;
+  background: #f7fafc;
+  border: 1px solid #e1e8ee;
+  box-sizing: border-box;
+  overflow: hidden;
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    border-color 0.25s ease;
 }
 
-.capability-features li {
+.capability-card:hover {
+  transform: translateY(-4px);
+  border-color: #b9cfde;
+  box-shadow: 0 18px 38px rgba(11, 35, 65, 0.08);
+}
+
+.capability-card-top {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+.capability-number {
+  color: #9aabb9;
+  font-size: 0.72rem;
+  font-weight: 900;
+  letter-spacing: 1px;
+}
+
+.capability-icon {
+  width: 50px;
+  height: 50px;
+  display: grid;
+  place-items: center;
+  background: #e4f2fa;
+  color: #07558a;
+}
+
+.capability-card:nth-child(2n) .capability-icon {
+  background: #fff0e8;
+  color: #e85d20;
+}
+
+.capability-card h3 {
+  margin: 35px 0 12px;
+  color: #0b2341;
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 1.3rem;
+  line-height: 1.15;
+  font-weight: 700;
+  letter-spacing: -0.4px;
+}
+
+.capability-card p {
+  margin: 0;
+  color: #607080;
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 0.88rem;
+  line-height: 1.7;
+}
+
+.capability-rule {
+  width: 34px;
+  height: 3px;
+  margin-top: auto;
+  padding-top: 25px;
+  border-bottom: 3px solid #ff6b2c;
+  box-sizing: content-box;
+}
+
+/* =========================
+   FOOTER STRIP
+========================= */
+
+.capabilities-footer {
+  margin-top: 18px;
+  padding: 26px 28px;
   display: flex;
   align-items: center;
-  gap: 8px;
-
-  color: #23415c;
-
-  font-family: "Space Grotesk", sans-serif;
-  font-size: 14px;
-  line-height: 1.3;
-  font-weight: 400;
+  justify-content: space-between;
+  gap: 35px;
+  background: #0b2341;
+  color: #ffffff;
+  box-sizing: border-box;
 }
 
-.feature-square {
-  width: 15px;
-  height: 15px;
+.capabilities-footer > div:first-child {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
 
-  flex-shrink: 0;
+.footer-icon {
+  width: 46px;
+  height: 46px;
+  flex: 0 0 46px;
+  display: grid;
+  place-items: center;
+  background: #07558a;
+  color: #ffffff;
+}
 
-  background: #ff641f;
+.capabilities-footer strong {
+  display: block;
+  font-size: 0.7rem;
+  letter-spacing: 1px;
+}
+
+.capabilities-footer p {
+  max-width: 580px;
+  margin: 7px 0 0;
+  color: #bdcbd6;
+  font-size: 0.76rem;
+  line-height: 1.55;
+}
+
+.capabilities-footer-stats {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 8px;
+}
+
+.capabilities-footer-stats span {
+  padding: 8px 10px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  color: #e8f0f5;
+  font-size: 0.62rem;
+  font-weight: 800;
+  letter-spacing: 0.8px;
 }
 
 /* =========================
@@ -206,15 +244,20 @@
 
 @media (max-width: 1050px) {
   .capabilities-container {
-    padding: 70px 30px;
+    padding: 85px 30px;
   }
 
-  .capability-grid {
-    gap: 25px;
+  .capabilities-grid {
+    grid-template-columns: repeat(2, 1fr);
   }
 
-  .capabilities-heading h2 {
-    font-size: 38px;
+  .capabilities-footer {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .capabilities-footer-stats {
+    justify-content: flex-start;
   }
 }
 
@@ -222,32 +265,73 @@
    MOBILE
 ========================= */
 
-@media (max-width: 800px) {
+@media (max-width: 700px) {
   .capabilities-container {
-    padding: 60px 20px;
+    padding: 65px 20px;
   }
 
   .capabilities-header {
+    align-items: flex-start;
     flex-direction: column;
     gap: 25px;
   }
 
   .capabilities-heading h2 {
-    font-size: 34px;
+    font-size: 2.35rem;
+    letter-spacing: -1.2px;
   }
 
   .capabilities-heading p {
-    font-size: 16px;
+    font-size: 0.9rem;
   }
 
-  .capability-grid {
-    grid-template-columns: 1fr;
-    gap: 20px;
+  .capabilities-mark {
+    padding-bottom: 0;
+  }
 
+  .capabilities-grid {
+    grid-template-columns: 1fr;
+    gap: 13px;
     margin-top: 40px;
   }
 
   .capability-card {
-    min-height: auto;
+    min-height: 270px;
+    padding: 23px;
+  }
+
+  .capability-card h3 {
+    margin-top: 28px;
+  }
+
+  .capabilities-footer {
+    padding: 23px;
+  }
+
+  .capabilities-footer > div:first-child {
+    align-items: flex-start;
+  }
+
+  .capabilities-footer-stats {
+    gap: 6px;
+  }
+}
+
+@media (max-width: 460px) {
+  .capabilities-container {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  .capabilities-heading h2 {
+    font-size: 2.1rem;
+  }
+
+  .capabilities-footer {
+    padding: 20px;
+  }
+
+  .capabilities-footer > div:first-child {
+    flex-direction: column;
   }
 }
