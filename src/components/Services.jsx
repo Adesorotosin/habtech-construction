@@ -1,285 +1,277 @@
 import React from "react";
+import {
+  ArrowRight,
+  ClipboardCheck,
+  Compass,
+  FileText,
+  HardHat,
+  Home,
+  PencilRuler,
+  SearchCheck,
+  ShieldCheck,
+  Wrench,
+} from "lucide-react";
+import { Link } from "react-router-dom";
 import "./Services.css";
-import { HardHat } from "lucide-react";
+
+const services = [
+  {
+    icon: HardHat,
+    number: "01",
+    title: "Building Construction",
+    description:
+      "End-to-end construction for residential, commercial, and development projects, from site preparation through finishing and handover.",
+    points: ["Residential buildings", "Commercial projects", "New developments"],
+    image: "/assets/Residential_11.avif",
+  },
+  {
+    icon: Compass,
+    number: "02",
+    title: "Construction Consultation",
+    description:
+      "Professional guidance before and during construction to help you make practical decisions around scope, materials, feasibility, and execution.",
+    points: ["Project feasibility", "Technical guidance", "Pre-construction advice"],
+    image: "/assets/Architectural blueprint.avif",
+  },
+  {
+    icon: Wrench,
+    number: "03",
+    title: "Renovation & Remodeling",
+    description:
+      "We improve existing spaces with carefully planned renovation and remodeling work that balances function, durability, and the intended design.",
+    points: ["Home renovations", "Space upgrades", "Remodeling works"],
+    image: "/assets/adaptive.avif",
+  },
+  {
+    icon: ClipboardCheck,
+    number: "04",
+    title: "Project Management",
+    description:
+      "Structured coordination of people, materials, budgets, schedules, and deliverables so your project remains organised from start to completion.",
+    points: ["Budget coordination", "Schedule management", "Stakeholder coordination"],
+    image: "/assets/Commercial infrastructure.avif",
+  },
+  {
+    icon: ShieldCheck,
+    number: "05",
+    title: "Site Supervision",
+    description:
+      "Professional oversight of construction activities to support quality, safety, workmanship, specifications, and proper project execution on site.",
+    points: ["Workmanship checks", "Site coordination", "Quality monitoring"],
+    image: "/assets/industrial-site.jpg",
+  },
+  {
+    icon: FileText,
+    number: "06",
+    title: "BOQ & Cost Estimation",
+    description:
+      "Detailed quantity measurement and cost estimation that gives you a clearer understanding of what your project requires before major construction spending begins.",
+    points: ["Quantity measurement", "Cost estimation", "Procurement planning"],
+    image: "/assets/Architectural blueprint.avif",
+    featured: true,
+  },
+  {
+    icon: SearchCheck,
+    number: "07",
+    title: "Property Inspection",
+    description:
+      "Independent property and building inspections to help clients identify visible defects, construction concerns, maintenance needs, and potential risks.",
+    points: ["Property assessment", "Defect identification", "Pre-purchase checks"],
+    image: "/assets/portfolio_1.avif",
+  },
+];
+
+const process = [
+  {
+    number: "01",
+    title: "Understand",
+    description: "We understand your property, goals, scope, and project requirements.",
+  },
+  {
+    number: "02",
+    title: "Plan",
+    description: "We define the right approach, documentation, resources, and next steps.",
+  },
+  {
+    number: "03",
+    title: "Execute",
+    description: "We coordinate and supervise the work with attention to quality and safety.",
+  },
+  {
+    number: "04",
+    title: "Deliver",
+    description: "We review the completed work and move the project toward a proper handover.",
+  },
+];
 
 function Services() {
   return (
-    <div className="services-container">
-      {/* HERO SECTION */}
+    <main className="services-page">
       <section className="services-hero">
-        <div className="services-hero-left">
-          <span className="capabilities-badge">CAPABILITIES & EXPERTISE</span>
-          <h1 className="services-title">
-            ENGINEERING
-            <br />
-            PERMANENCE.
+        <div className="services-hero-content">
+          <span className="services-eyebrow">OUR SERVICES</span>
+          <h1>
+            Construction expertise for projects that need to be done <span>properly.</span>
           </h1>
-          <p className="services-description">
-            We don’t just build structures; we establish foundations for
-            industry, commerce, and life. Our methodology merges architectural
-            precision with heavy-duty execution.
+          <p>
+            From planning and cost estimation to construction, supervision, and
+            property inspection, Habtech provides practical professional support
+            across the project lifecycle.
           </p>
+
+          <div className="services-hero-actions">
+            <Link to="/contact" className="services-primary-button">
+              Discuss Your Project
+              <ArrowRight size={18} />
+            </Link>
+            <Link to="/boq-estimation" className="services-secondary-button">
+              Explore BOQ & Estimation
+            </Link>
+          </div>
         </div>
 
-        <div className="services-hero-right">
-          <div className="services-image-wrapper">
-            <img
-              src="/assets/Architectural blueprint.avif"
-              alt="Architectural Blueprint Drawing"
-            />
+        <div className="services-hero-visual">
+          <div className="services-blueprint-card">
+            <PencilRuler size={22} />
+            <span>PLAN</span>
+          </div>
+          <img
+            src="/assets/Architectural blueprint.avif"
+            alt="Architectural construction blueprint"
+          />
+          <div className="services-hero-note">
+            <span className="note-line" />
+            <div>
+              <strong>FROM IDEA TO SITE</strong>
+              <p>Practical support at every important stage.</p>
+            </div>
           </div>
         </div>
       </section>
 
-       {/* SERVICES GRID SECTION */}
-<section className="services-grid-section">
-  {/* RESIDENTIAL CARD (Light Theme) */}
-  <div className="service-card service-card-light">
-    <div className="card-header">
-      <svg className="card-icon blue-icon" viewBox="0 0 24 24" fill="currentColor">
-        <path d="M19 21H5a1 1 0 0 1-1-1v-9H1l10.327-9.388a1 1 0 0 1 1.346 0L23 11h-3v9a1 1 0 0 1-1 1zm-7-10a2 2 0 1 0 0-4 2 2 0 0 0 0 4z"/>
-      </svg>
-      <h2>RESIDENTIAL</h2>
-    </div>
-
-    <p className="card-desc">
-      Bespoke estate development and high-density luxury residential complexes.
-      We prioritize structural integrity and aesthetic longevity, ensuring homes
-      that withstand generations.
-    </p>
-
-    <ul className="service-list">
-      <li>- CUSTOM ESTATES</li>
-      <li>- MULTI-FAMILY COMPLEXES</li>
-      <li>- SUSTAINABLE DWELLINGS</li>
-    </ul>
-
-    <div className="card-image-container">
-      <img
-        src="/assets/Residential_11.avif"
-        alt="HABTECH Residential Project"
-      />
-    </div>
-  </div>
-
-  {/* COMMERCIAL CARD (Dark Navy Theme) */}
-  <div className="service-card service-card-dark">
-    <div className="card-content-left">
-      <div className="card-header">
-        <svg className="card-icon orange-icon" viewBox="0 0 24 24" fill="currentColor">
-          <path d="M4 2h16a1 1 0 0 1 1 1v18a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V3a1 1 0 0 1 1-1zm3 4v2h2V6H7zm0 4v2h2v-2H7zm0 4v2h2v-2H7zm6-8v2h2V6h-2zm0 4v2h2v-2h-2zm0 4v2h2v-2h-2z"/>
-        </svg>
-        <h2>COMMERCIAL INFRASTRUCTURE</h2>
-      </div>
-
-      <p className="card-desc text-light">
-        From Grade-A office towers to expansive retail hubs. Our commercial division
-        focuses on rapid deployment without compromising the massive-scale precision
-        required for modern business environments.
-      </p>
-
-      <div className="tag-group">
-        <span className="tag">OFFICE TOWERS</span>
-        <span className="tag">RETAIL ANCHORS</span>
-        <span className="tag">HOSPITALITY</span>
-      </div>
-    </div>
-
-    <div className="card-image-right">
-      <img
-        src="/assets/Commercial infrastructure.avif"
-        alt="Commercial Site Laser Level Alignment"
-      />
-    </div>
-  </div>
-</section>
-
-{/* INDUSTRIAL & PROJECT MANAGEMENT SECTION */}
-<section className="services-secondary-grid">
-  {/* INDUSTRIAL STRENGTH CARD */}
-  <div className="secondary-card industrial-card">
-    <div className="industrial-content">
-      <div className="card-header">
-        {/* Factory Icon */}
-        <HardHat className="card-icon dark-icon" size={38} />
-        <h2>INDUSTRIAL STRENGTH</h2>
-      </div>
-
-      <p className="card-desc">
-        Specialized facilities including logistics centers, manufacturing plants, and heavy processing units. We utilize reinforced concrete and structural steel systems designed for high-load performance.
-      </p>
-
-      {/* Progress Bar Component */}
-      <div className="progress-container">
-        <div className="progress-bar-bg">
-          <div className="progress-bar-fill"></div>
+      <section className="services-intro">
+        <div>
+          <span className="section-kicker">WHAT WE DO</span>
+          <h2>One construction partner. Multiple project needs.</h2>
         </div>
-        <span className="progress-label">INDUSTRIAL LOAD CAPACITY: 98% OPTIMIZED</span>
-      </div>
-    </div>
+        <p>
+          Whether you are starting from an idea, already have drawings, or are
+          managing an active construction site, our services are designed to
+          help you make better project decisions and execute with confidence.
+        </p>
+      </section>
 
-    <div className="industrial-image-wrapper">
-      <img
-        src="/assets/industrial-site.jpg"
-        alt="Industrial Foundation Groundwork"
-      />
-    </div>
-  </div>
+      <section className="services-grid" aria-label="Habtech construction services">
+        {services.map((service) => {
+          const Icon = service.icon;
 
-  {/* PROJECT MANAGEMENT CARD */}
-  <div className="secondary-card management-card">
-    <div className="card-header">
-      {/* Orange Grid/Nodes Icon */}
-      <svg className="card-icon orange-icon" viewBox="0 0 24 24" fill="currentColor">
-        <path d="M4 4h6v6H4V4zm10 0h6v6h-6V4zm0 10h6v6h-6v-6zM4 14h6v6H4v-6z"/>
-      </svg>
-      <h2>PROJECT MANAGEMENT</h2>
-    </div>
+          return (
+            <article
+              className={`service-item-card${service.featured ? " service-item-card-featured" : ""}`}
+              key={service.title}
+            >
+              <div className="service-card-top">
+                <span className="service-number">{service.number}</span>
+                <Icon size={28} strokeWidth={1.8} />
+              </div>
 
-    <p className="card-desc">
-      Our digital-first oversight ensures absolute compliance with budgets and timelines. We act as the central nervous system for complex multi-stakeholder sites.
-    </p>
+              <div className="service-card-content">
+                <h3>{service.title}</h3>
+                <p>{service.description}</p>
 
-    <a href="#process" className="learn-process-link">
-      LEARN PROCESS <span>→</span>
-    </a>
-  </div>
-</section>
+                <ul>
+                  {service.points.map((point) => (
+                    <li key={point}>
+                      <span />
+                      {point}
+                    </li>
+                  ))}
+                </ul>
+              </div>
 
-{/* STRUCTURAL REBIRTH SECTION */}
-<section className="rebirth-section-wrapper">
-  <div className="rebirth-section">
-    {/* LEFT COLUMN: TITLE & STAT CARD */}
-    <div className="rebirth-left">
-      <h2 className="rebirth-title">
-        STRUCTURAL
-        <br />
-        <span className="orange-text">REBIRTH</span>
-      </h2>
+              <div className="service-card-image">
+                <img src={service.image} alt={service.title} />
+              </div>
 
-      <p className="rebirth-description">
-        We specialize in breathing new life into aging structures through forensic
-        engineering and modern architectural retrofitting.
-      </p>
+              {service.featured && (
+                <Link to="/boq-estimation" className="service-card-link">
+                  Learn about BOQ & Estimation
+                  <ArrowRight size={16} />
+                </Link>
+              )}
+            </article>
+          );
+        })}
+      </section>
 
-      <div className="stat-card">
-        <h3 className="stat-number">15+</h3>
-        <p className="stat-label">HISTORIC RESTORATIONS COMPLETED</p>
-      </div>
-    </div>
-
-    {/* RIGHT COLUMN: STACKED SERVICE CARDS */}
-    <div className="rebirth-right">
-      {/* CARD 1: ADAPTIVE REUSE */}
-      <div className="rebirth-card">
-        <div className="rebirth-card-img">
-          <img src="/assets/adaptive.avif" alt="Adaptive Reuse Interior" />
-        </div>
-        <div className="rebirth-card-content">
-          <h3>ADAPTIVE REUSE</h3>
+      <section className="services-process" id="process">
+        <div className="services-process-heading">
+          <span className="section-kicker">HOW WE SUPPORT YOUR PROJECT</span>
+          <h2>A clear process from the first conversation to delivery.</h2>
           <p>
-            Converting industrial warehouses into modern living spaces or retail
-            zones requires a delicate balance of heritage preservation and
-            technological integration.
+            Good construction starts with good preparation. We help bring
+            structure to the decisions that shape your project.
           </p>
-          <div className="orange-check-list">
-            <span className="check-item">
-              <svg className="verify-icon" viewBox="0 0 24 24" fill="currentColor">
-                <path d="M23 12l-2.44-2.79.34-3.68-3.61-.82-1.89-3.18L12 3 8.6 1.53 6.71 4.71l-3.61.81.34 3.68L1 12l2.44 2.79-.34 3.68 3.61.82 1.89 3.18L12 21l3.4 1.47 1.89-3.18 3.61-.82-.34-3.68L23 12zm-13 5l-4-4 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
-              </svg>
-              STRUCTURAL REINFORCEMENT
-            </span>
-            <span className="check-item">
-              <svg className="verify-icon" viewBox="0 0 24 24" fill="currentColor">
-                <path d="M23 12l-2.44-2.79.34-3.68-3.61-.82-1.89-3.18L12 3 8.6 1.53 6.71 4.71l-3.61.81.34 3.68L1 12l2.44 2.79-.34 3.68 3.61.82 1.89 3.18L12 21l3.4 1.47 1.89-3.18 3.61-.82-.34-3.68L23 12zm-13 5l-4-4 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
-              </svg>
-              CODE COMPLIANCE
-            </span>
+        </div>
+
+        <div className="services-process-grid">
+          {process.map((step) => (
+            <div className="process-step" key={step.number}>
+              <span>{step.number}</span>
+              <h3>{step.title}</h3>
+              <p>{step.description}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <section className="services-tools">
+        <div className="services-tools-copy">
+          <span className="section-kicker">PLAN BEFORE YOU BUILD</span>
+          <h2>Start with a clearer picture of your project.</h2>
+          <p>
+            Use our construction cost calculator for an indicative starting
+            point, then speak with us when you need a professional assessment
+            and BOQ.
+          </p>
+          <Link to="/cost-calculator" className="services-primary-button">
+            Try Cost Calculator
+            <ArrowRight size={18} />
+          </Link>
+        </div>
+
+        <div className="services-tools-panel">
+          <div className="tool-icon">
+            <Home size={25} />
+          </div>
+          <div>
+            <span>CONSTRUCTION COST CALCULATOR</span>
+            <strong>Estimate. Understand. Plan.</strong>
+            <p>
+              Get an indicative cost range based on your project details before
+              moving to professional estimation.
+            </p>
           </div>
         </div>
-      </div>
+      </section>
 
-      {/* CARD 2: SEISMIC RETROFITTING */}
-      <div className="rebirth-card">
-        <div className="rebirth-card-img">
-          <img src="/assets/portfolio_1.avif" alt="Seismic Retrofitting Groundwork" />
-        </div>
-        <div className="rebirth-card-content">
-          <h3>SEISMIC RETROFITTING</h3>
+      <section className="services-final-cta">
+        <div>
+          <span className="section-kicker">HAVE A PROJECT IN MIND?</span>
+          <h2>Tell us what you are building.</h2>
           <p>
-            Enhancing existing buildings to be more resistant to seismic activity.
-            We use advanced damper systems and carbon-fiber reinforcement
-            techniques.
+            Share your project details and we will help you identify the right
+            next step.
           </p>
-          <div className="orange-check-list">
-            <span className="check-item">
-              <svg className="verify-icon" viewBox="0 0 24 24" fill="currentColor">
-                <path d="M23 12l-2.44-2.79.34-3.68-3.61-.82-1.89-3.18L12 3 8.6 1.53 6.71 4.71l-3.61.81.34 3.68L1 12l2.44 2.79-.34 3.68 3.61.82 1.89 3.18L12 21l3.4 1.47 1.89-3.18 3.61-.82-.34-3.68L23 12zm-13 5l-4-4 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
-              </svg>
-              VIBRATION ANALYSIS
-            </span>
-            <span className="check-item">
-              <svg className="verify-icon" viewBox="0 0 24 24" fill="currentColor">
-                <path d="M23 12l-2.44-2.79.34-3.68-3.61-.82-1.89-3.18L12 3 8.6 1.53 6.71 4.71l-3.61.81.34 3.68L1 12l2.44 2.79-.34 3.68 3.61.82 1.89 3.18L12 21l3.4 1.47 1.89-3.18 3.61-.82-.34-3.68L23 12zm-13 5l-4-4 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
-              </svg>
-              STEEL BRACING
-            </span>
-          </div>
         </div>
-      </div>
-    </div>
-  </div>
-</section>
 
-{/* THE BLUEPRINT FOR SUCCESS SECTION */}
-<section className="blueprint-section">
-  <h2 className="blueprint-title">THE BLUEPRINT FOR SUCCESS</h2>
-
-  <div className="blueprint-grid">
-    {/* STEP 01 */}
-    <div className="blueprint-card">
-      <span className="step-number">01</span>
-      <h3>DISCOVERY</h3>
-      <p>
-        Defining site feasibility, regulatory constraints, and initial
-        architectural vision.
-      </p>
-    </div>
-
-    {/* STEP 02 */}
-    <div className="blueprint-card">
-      <span className="step-number">02</span>
-      <h3>ENGINEERING</h3>
-      <p>
-        Deep-dive structural calculations and material sourcing logistics.
-      </p>
-    </div>
-
-    {/* STEP 03 */}
-    <div className="blueprint-card">
-      <span className="step-number">03</span>
-      <h3>EXECUTION</h3>
-      <p>
-        On-site construction led by specialized foremen and technical crews.
-      </p>
-    </div>
-
-    {/* STEP 04 */}
-    <div className="blueprint-card">
-      <span className="step-number">04</span>
-      <h3>HANDOVER</h3>
-      <p>
-        Post-build audit, safety certification, and facility operationalization.
-      </p>
-    </div>
-  </div>
-</section>
-    </div>
-
-    
+        <Link to="/contact" className="services-cta-button">
+          Get a Quote
+          <ArrowRight size={18} />
+        </Link>
+      </section>
+    </main>
   );
-
- 
 }
 
 export default Services;
