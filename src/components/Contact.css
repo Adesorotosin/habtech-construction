@@ -353,3 +353,13 @@
     gap: 1.5rem;
   }
 }
+
+.contact-quote-intro {
+  padding: 1.5rem 0 0;
+}
+
+.contact-quote-intro p {
+  margin: 0 0 1.5rem;
+  color: #555;
+  line-height: 1.7;
+}
