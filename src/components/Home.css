@@ -1,0 +1,451 @@
+.home-page {
+  background: #f7f8f8;
+  color: #10212b;
+}
+
+.home-hero-wrap {
+  min-height: 620px;
+  padding: 150px 6vw 90px;
+  background:
+    linear-gradient(90deg, rgba(7, 85, 138, 0.96), rgba(7, 85, 138, 0.82)),
+    url("/assets/Habtech construction1.avif") center/cover;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 48px;
+  color: #fff;
+}
+
+.home-hero-content {
+  max-width: 850px;
+}
+
+.home-eyebrow,
+.home-kicker {
+  display: inline-block;
+  margin-bottom: 18px;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.home-eyebrow {
+  color: #ffb08d;
+}
+
+.home-hero-content h1 {
+  margin: 0;
+  font-size: clamp(48px, 7vw, 96px);
+  line-height: 0.92;
+  letter-spacing: -0.055em;
+  font-weight: 700;
+}
+
+.home-hero-content h1 span {
+  color: #ff8a5b;
+}
+
+.home-hero-content p {
+  max-width: 680px;
+  margin: 30px 0 0;
+  font-size: 18px;
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.86);
+}
+
+.home-hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 24px;
+  margin-top: 34px;
+}
+
+.home-hero-actions button,
+.home-hero-actions a,
+.home-primary-button,
+.home-outline-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  min-height: 52px;
+  padding: 0 22px;
+  border: 0;
+  font: inherit;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-decoration: none;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.home-hero-actions button,
+.home-primary-button {
+  background: #ff5a1f;
+  color: #fff;
+}
+
+.home-hero-actions a {
+  color: #fff;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.55);
+}
+
+.home-hero-note {
+  min-width: 230px;
+  padding: 22px;
+  border-left: 2px solid #ff5a1f;
+  background: rgba(0, 24, 40, 0.32);
+  backdrop-filter: blur(8px);
+}
+
+.home-hero-note span,
+.home-hero-note strong {
+  display: block;
+}
+
+.home-hero-note span {
+  margin-bottom: 8px;
+  font-size: 10px;
+  letter-spacing: 0.12em;
+  opacity: 0.7;
+}
+
+.home-hero-note strong {
+  font-size: 20px;
+}
+
+.home-section-container {
+  width: min(1380px, calc(100% - 80px));
+  margin: 0 auto;
+}
+
+.home-calculator-preview,
+.home-guide-preview,
+.home-boq-cta {
+  padding: 100px 0;
+}
+
+.home-calculator-preview {
+  background: #fff;
+}
+
+.home-section-heading {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 60px;
+  margin-bottom: 42px;
+}
+
+.home-section-heading > div {
+  max-width: 760px;
+}
+
+.home-kicker {
+  color: #07558a;
+}
+
+.home-section-heading h2,
+.boq-cta-copy h2 {
+  margin: 0;
+  font-size: clamp(34px, 4.5vw, 62px);
+  line-height: 0.98;
+  letter-spacing: -0.045em;
+}
+
+.home-section-heading > p {
+  max-width: 460px;
+  margin: 0;
+  color: #61717a;
+  line-height: 1.7;
+}
+
+.calculator-preview-card {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: 30px;
+  padding: 42px;
+  background: #07558a;
+  color: #fff;
+}
+
+.calculator-preview-icon,
+.boq-cta-icon {
+  display: grid;
+  place-items: center;
+  width: 68px;
+  height: 68px;
+  background: #ff5a1f;
+}
+
+.calculator-preview-copy {
+  max-width: 720px;
+}
+
+.calculator-preview-copy > span {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  color: #a9d4ec;
+}
+
+.calculator-preview-copy h3 {
+  margin: 8px 0 10px;
+  font-size: clamp(25px, 3vw, 38px);
+  line-height: 1.05;
+}
+
+.calculator-preview-copy p {
+  margin: 0;
+  color: rgba(255, 255, 255, 0.78);
+  line-height: 1.6;
+}
+
+.home-outline-button {
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  white-space: nowrap;
+}
+
+.home-guide-preview {
+  background: #eef3f5;
+}
+
+.guide-heading {
+  align-items: center;
+}
+
+.home-text-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: #07558a;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.guide-preview-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+}
+
+.guide-preview-card {
+  min-height: 340px;
+  padding: 28px;
+  background: #fff;
+  border-top: 4px solid #07558a;
+  display: flex;
+  flex-direction: column;
+}
+
+.guide-preview-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 45px;
+  color: #07558a;
+}
+
+.guide-preview-top span {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+}
+
+.guide-preview-category {
+  margin-bottom: 12px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #ff5a1f;
+}
+
+.guide-preview-card h3 {
+  margin: 0;
+  font-size: 26px;
+  line-height: 1.08;
+  letter-spacing: -0.025em;
+}
+
+.guide-preview-card p {
+  margin: 18px 0 24px;
+  color: #66757d;
+  line-height: 1.65;
+}
+
+.guide-preview-card a {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  margin-top: auto;
+  color: #07558a;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-decoration: none;
+}
+
+.home-boq-cta {
+  background: #10212b;
+  color: #fff;
+}
+
+.boq-cta-card {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: 32px;
+  padding: 54px;
+  border: 1px solid rgba(255, 255, 255, 0.13);
+}
+
+.boq-cta-copy {
+  max-width: 760px;
+}
+
+.boq-cta-copy .home-kicker {
+  color: #ff8a5b;
+}
+
+.boq-cta-copy h2 {
+  color: #fff;
+}
+
+.boq-cta-copy p {
+  max-width: 690px;
+  margin: 18px 0 0;
+  color: rgba(255, 255, 255, 0.72);
+  line-height: 1.7;
+}
+
+.home-primary-button {
+  white-space: nowrap;
+}
+
+@media (max-width: 1050px) {
+  .home-hero-wrap {
+    min-height: 560px;
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+
+  .home-hero-note {
+    display: none;
+  }
+
+  .home-section-container {
+    width: min(100% - 48px, 1380px);
+  }
+
+  .home-section-heading {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 22px;
+  }
+
+  .calculator-preview-card,
+  .boq-cta-card {
+    grid-template-columns: auto 1fr;
+  }
+
+  .calculator-preview-card .home-outline-button,
+  .boq-cta-card .home-primary-button {
+    grid-column: 2;
+    justify-self: start;
+  }
+}
+
+@media (max-width: 800px) {
+  .home-hero-wrap {
+    min-height: 600px;
+    padding: 130px 24px 55px;
+  }
+
+  .home-hero-content h1 {
+    font-size: clamp(46px, 13vw, 76px);
+  }
+
+  .home-hero-content p {
+    font-size: 16px;
+  }
+
+  .home-hero-actions {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .home-hero-actions button,
+  .home-hero-actions a {
+    width: fit-content;
+  }
+
+  .home-calculator-preview,
+  .home-guide-preview,
+  .home-boq-cta {
+    padding: 70px 0;
+  }
+
+  .home-section-container {
+    width: calc(100% - 32px);
+  }
+
+  .calculator-preview-card,
+  .boq-cta-card {
+    grid-template-columns: 1fr;
+    padding: 30px 24px;
+  }
+
+  .calculator-preview-card .home-outline-button,
+  .boq-cta-card .home-primary-button {
+    grid-column: auto;
+    width: 100%;
+  }
+
+  .guide-preview-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .guide-preview-card {
+    min-height: 300px;
+  }
+
+  .guide-heading {
+    align-items: flex-start;
+  }
+}
+
+@media (max-width: 520px) {
+  .home-hero-wrap {
+    min-height: 570px;
+    padding-top: 115px;
+  }
+
+  .home-hero-content h1 {
+    font-size: 44px;
+  }
+
+  .home-section-heading h2,
+  .boq-cta-copy h2 {
+    font-size: 38px;
+  }
+
+  .home-hero-actions button,
+  .home-hero-actions a {
+    width: 100%;
+  }
+
+  .calculator-preview-icon,
+  .boq-cta-icon {
+    width: 56px;
+    height: 56px;
+  }
+}
