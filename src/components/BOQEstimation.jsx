@@ -1,5 +1,13 @@
 import { Link } from "react-router-dom";
-import { ArrowRight, CheckCircle, FileText, ClipboardText, Calculator, Ruler, ShieldCheck } from "phosphor-react";
+import {
+  ArrowRight,
+  CheckCircle,
+  FileText,
+  ClipboardText,
+  Calculator,
+  Ruler,
+  ShieldCheck,
+} from "@phosphor-icons/react";
 import "./BOQEstimation.css";
 
 const includedItems = [
@@ -249,7 +257,11 @@ function BOQEstimation({ onOpenQuote }) {
           </p>
         </div>
 
-        <button type="button" className="boq-primary-button boq-cta-button" onClick={onOpenQuote}>
+        <button
+          type="button"
+          className="boq-primary-button boq-cta-button"
+          onClick={onOpenQuote}
+        >
           Request BOQ
           <ArrowRight size={18} weight="bold" />
         </button>
