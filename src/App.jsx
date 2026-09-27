@@ -2,11 +2,6 @@ import { useEffect, useState } from "react";
 import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
 
 import Navbar from "./components/Navbar";
-import Hero from "./components/Hero";
-import Capabilities from "./components/Capabilities";
-import Portfolio from "./components/Portfolio";
-import Testimonials from "./components/Testimonials";
-import CTA from "./components/CTA";
 import Footer from "./components/Footer";
 
 import Projects from "./components/Projects";
@@ -14,6 +9,7 @@ import About from "./components/About";
 import Services from "./components/Services";
 import Contact from "./components/Contact";
 import Blog from "./components/Blog";
+import Home from "./components/Home";
 import ConstructionGuide from "./components/ConstructionGuide";
 import CostCalculator from "./components/CostCalculator";
 import BOQEstimation from "./components/BOQEstimation";
@@ -30,17 +26,7 @@ function ScrollToTop() {
   return null;
 }
 
-function Home({ onOpenBidModal }) {
-  return (
-    <>
-      <Hero onOpenBidModal={onOpenBidModal} />
-      <Capabilities />
-      <Portfolio />
-      <Testimonials />
-      <CTA onOpenBidModal={onOpenBidModal} />
-    </>
-  );
-}
+
 
 function App() {
   const [isBidModalOpen, setIsBidModalOpen] = useState(false);
