@@ -1,7 +1,7 @@
 import React from "react";
 import "./Contact.css";
 
-const Contact = () => {
+const Contact = ({ onOpenQuote }) => {
   return (
     <div className="contact-page-wrapper">
       {/* ================= HERO SECTION ================= */}
@@ -84,53 +84,19 @@ const Contact = () => {
             <div className="form-content">
               <h2 className="form-title">Request a Quote</h2>
 
-              <form onSubmit={(e) => e.preventDefault()}>
-                <div className="form-row-2col">
-                  <div className="form-group">
-                    <label>Full name *</label>
-                    <input type="text" placeholder="Jonathan Benjamin" />
-                  </div>
-
-                  <div className="form-group">
-                    <label>Corporate Email *</label>
-                    <input type="email" placeholder="sterling@industry.com" />
-                  </div>
-                </div>
-
-                <div className="form-row-2col">
-                  <div className="form-group">
-                    <label>Project Type *</label>
-                    <select defaultValue="Residential building">
-                      <option value="Residential building">
-                        Residential building
-                      </option>
-                      <option value="Commercial building">
-                        Commercial building
-                      </option>
-                      <option value="Industrial renovation">
-                        Industrial renovation
-                      </option>
-                    </select>
-                  </div>
-
-                  <div className="form-group">
-                    <label>Estimated budget *</label>
-                    <input type="text" placeholder="1M - 5M" />
-                  </div>
-                </div>
-
-                <div className="form-group full-width">
-                  <label>Project scope & Spec</label>
-                  <textarea
-                    rows="4"
-                    placeholder="Detail the structural requirements and timeline..."
-                  ></textarea>
-                </div>
-
-                <button type="submit" className="submit-inquiry-btn">
-                  INITIALIZE INQUIRY
+              <div className="contact-quote-intro">
+                <p>
+                  Tell us about your project and the Habtech team can review the
+                  scope, location, project stage, budget, and available drawings.
+                </p>
+                <button
+                  type="button"
+                  className="submit-inquiry-btn"
+                  onClick={onOpenQuote}
+                >
+                  OPEN FULL QUOTE REQUEST
                 </button>
-              </form>
+              </div>
             </div>
           </div>
         </div>
@@ -140,20 +106,20 @@ const Contact = () => {
       <section className="contact-stats-section">
         <div className="contact-stats-grid">
           <div className="stat-item">
-            <h2 className="stat-number">100%</h2>
-            <p className="stat-label">OSHA COMPLIANCE</p>
+            <h2 className="stat-number">01</h2>
+            <p className="stat-label">PROJECT PLANNING</p>
           </div>
           <div className="stat-item">
-            <h2 className="stat-number">24/7</h2>
-            <p className="stat-label">SITE MONITORING</p>
+            <h2 className="stat-number">02</h2>
+            <p className="stat-label">SITE SUPERVISION</p>
           </div>
           <div className="stat-item">
-            <h2 className="stat-number">Zero</h2>
-            <p className="stat-label">SITE ACCIDENT</p>
+            <h2 className="stat-number">03</h2>
+            <p className="stat-label">BOQ & ESTIMATION</p>
           </div>
           <div className="stat-item">
-            <h2 className="stat-number">A+</h2>
-            <p className="stat-label">BONDING CAPACITY</p>
+            <h2 className="stat-number">04</h2>
+            <p className="stat-label">PROPERTY INSPECTION</p>
           </div>
         </div>
       </section>
