@@ -1,4 +1,5 @@
 import React, { useMemo, useState } from "react";
+import { Link } from "react-router-dom";
 import "./CostCalculator.css";
 
 const LOCATIONS = [
@@ -291,9 +292,9 @@ function CostCalculator() {
               are required for an accurate project cost.
             </div>
 
-            <a className="boq-link" href="/boq-estimation">
+            <Link className="boq-link" to="/boq-estimation">
               WANT AN ACCURATE ESTIMATE? <span>REQUEST PROFESSIONAL BOQ →</span>
-            </a>
+            </Link>
           </aside>
         </div>
       </section>
