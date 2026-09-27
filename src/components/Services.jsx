@@ -58,7 +58,7 @@ const services = [
     description:
       "Professional oversight of construction activities to support quality, safety, workmanship, specifications, and proper project execution on site.",
     points: ["Workmanship checks", "Site coordination", "Quality monitoring"],
-    image: "/assets/industrial-site.jpg",
+    image: "/assets/portfolio_3.avif",
   },
   {
     icon: FileText,
