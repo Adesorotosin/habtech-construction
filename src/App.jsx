@@ -3,6 +3,7 @@ import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
 
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
+import RequestQuote from "./components/RequestQuote";
 
 import Projects from "./components/Projects";
 import About from "./components/About";
@@ -14,8 +15,6 @@ import ConstructionGuide from "./components/ConstructionGuide";
 import CostCalculator from "./components/CostCalculator";
 import BOQEstimation from "./components/BOQEstimation";
 
-import BidModal from "./components/BidModal";
-
 function ScrollToTop() {
   const { pathname } = useLocation();
 
@@ -26,38 +25,45 @@ function ScrollToTop() {
   return null;
 }
 
-
-
 function App() {
-  const [isBidModalOpen, setIsBidModalOpen] = useState(false);
+  const [isQuoteOpen, setIsQuoteOpen] = useState(false);
 
-  const openBidModal = () => setIsBidModalOpen(true);
-  const closeBidModal = () => setIsBidModalOpen(false);
+  const openQuote = () => setIsQuoteOpen(true);
+  const closeQuote = () => setIsQuoteOpen(false);
 
   return (
     <BrowserRouter>
       <ScrollToTop />
 
-      <Navbar onOpenBidModal={openBidModal} />
+      <Navbar onOpenQuote={openQuote} />
 
       <Routes>
-        <Route path="/" element={<Home onOpenBidModal={openBidModal} />} />
-        <Route path="/projects" element={<Projects />} />
+        <Route path="/" element={<Home onOpenQuote={openQuote} />} />
+        <Route
+          path="/projects"
+          element={<Projects />}
+        />
         <Route
           path="/about"
-          element={<About onOpenBidModal={openBidModal} />}
+          element={<About onOpenQuote={openQuote} />}
         />
         <Route path="/services" element={<Services />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/blog" element={<Blog />} />
         <Route path="/construction-guide" element={<ConstructionGuide />} />
         <Route path="/cost-calculator" element={<CostCalculator />} />
-        <Route path="/boq-estimation" element={<BOQEstimation />} />
+        <Route
+          path="/boq-estimation"
+          element={<BOQEstimation onOpenQuote={openQuote} />}
+        />
       </Routes>
 
       <Footer />
 
-      <BidModal isOpen={isBidModalOpen} onClose={closeBidModal} />
+      <RequestQuote
+        isOpen={isQuoteOpen}
+        onClose={closeQuote}
+      />
     </BrowserRouter>
   );
 }
