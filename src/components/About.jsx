@@ -39,26 +39,25 @@ export default function About({ onOpenQuote }) {
 
             <div className="blueprint-columns">
               <p>
-                Founded in 2023 by Habeeb Kareem, Habtech Construction began as a
-                specialized masonry firm. Our early obsession with structural
-                integrity led to pioneering techniques in reinforced concrete that set
-                industry benchmarks.
+                Habtech Construction is focused on providing practical construction services
+                across planning, estimation, project management, site supervision,
+                construction, renovation, and property inspection.
               </p>
               <p>
-                Today, we have evolved into a full-scale industrial contractor.
-                While the technology has changed, our founding principle remains: if
-                it is worth building, it is worth building for a century.
+                Our approach is built around clear planning, responsible execution,
+                quality-focused supervision, transparent project information, and
+                long-term value for clients and the properties we work on.
               </p>
             </div>
 
             <div className="blueprint-stats">
               <div className="stat-item">
-                <span className="stat-number">36+</span>
-                <span className="stat-label">PROJECT COMPLETED</span>
+                <span className="stat-number">01</span>
+                <span className="stat-label">PLAN WITH CLARITY</span>
               </div>
               <div className="stat-item">
-                <span className="stat-number">1M</span>
-                <span className="stat-label">SAFE WORK HOURS</span>
+                <span className="stat-number">02</span>
+                <span className="stat-label">BUILD WITH DISCIPLINE</span>
               </div>
             </div>
           </div>
@@ -115,7 +114,7 @@ export default function About({ onOpenQuote }) {
         </div>
       </section>
 
-      <section className="safety-section">
+      <section className="safety-section" id="safety-practices">
         <div className="safety-intro">
           <h2>
             Zero
@@ -126,13 +125,13 @@ export default function About({ onOpenQuote }) {
           </h2>
 
           <p>
-            Our safety record isn’t a statistic; it’s a moral obligation. We operate
-            under the Thorne Protocol— a proprietary safety framework that exceeds
-            OSHA standards by 40%.
+            We treat safety as a core part of responsible construction. Our work
+            is guided by project requirements, applicable regulations, site
+            procedures, and active supervision.
           </p>
 
-          <a href="#safety-reports" className="safety-link">
-            VIEW SAFETY REPORTS <span>&rarr;</span>
+          <a href="#safety-practices" className="safety-link">
+            VIEW SAFETY PRACTICES <span>&rarr;</span>
           </a>
         </div>
 
@@ -147,8 +146,8 @@ export default function About({ onOpenQuote }) {
             </div>
             <h3>Daily Audit System</h3>
             <p>
-              Every site undergoes a three-tier digital inspection before work
-              begins each morning.
+              Site activities should be planned and checked before work begins,
+              with issues documented and addressed as the project progresses.
             </p>
           </div>
 
@@ -161,8 +160,8 @@ export default function About({ onOpenQuote }) {
             </div>
             <h3>Proactive Monitoring</h3>
             <p>
-              Utilizing AI-driven site monitoring to identify potential hazards before
-              they become incidents.
+              Active site supervision helps identify construction concerns early
+              and keeps important issues visible to the project team.
             </p>
           </div>
 
@@ -173,10 +172,10 @@ export default function About({ onOpenQuote }) {
                 <path d="M9 12l2 2 4-4" />
               </svg>
             </div>
-            <h3>Advanced Certification</h3>
+            <h3>Quality & Safety Checks</h3>
             <p>
-              100% of our field supervisors are OSHA-30 certified with specialized
-              heavy-lift training.
+              Project activities can be reviewed against drawings, specifications,
+              safety requirements, and agreed execution standards.
             </p>
           </div>
 
@@ -188,10 +187,10 @@ export default function About({ onOpenQuote }) {
                 <line x1="9" y1="11" x2="15" y2="11" />
               </svg>
             </div>
-            <h3>Thorne Protocol</h3>
+            <h3>Responsible Execution</h3>
             <p>
-              Our internal standards for structural integrity testing exceed municipal
-              requirements.
+              We emphasise careful coordination, documentation, supervision, and
+              responsible execution throughout the construction process.
             </p>
           </div>
         </div>
