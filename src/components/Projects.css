@@ -3,13 +3,7 @@
   width: 100%;
   max-width: 1200px;
   margin: 0 auto;
-  padding: 140px 1.5rem 3rem 1.5rem; /* Increased top padding from 80px to 140px */
-  box-sizing: border-box;
-  max-width: 1200px;        /* Ensure every section caps at the exact same width */
-  margin-left: auto;        /* Center align container */
-  margin-right: auto;       /* Center align container */
-  padding-left: 5rem;       /* Match your Home page horizontal gutter padding */
-  padding-right: 5rem;      /* Match your Home page horizontal gutter padding */
+  padding: 140px 5rem 3rem;
   box-sizing: border-box;
 }
 
@@ -424,5 +418,41 @@
   .blog-newsletter-section {
     padding-left: 1.5rem;
     padding-right: 1.5rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .projects-container {
+    padding: 105px 20px 2.5rem;
+  }
+
+  .projects-hero-content h1 {
+    font-size: 2.5rem;
+  }
+
+  .projects-hero-content p {
+    max-width: 100%;
+    font-size: 0.95rem;
+  }
+
+  .projects-hero-image {
+    height: 250px;
+  }
+
+  .card {
+    height: 330px;
+  }
+
+  .case-study-content h2 {
+    font-size: 2rem;
+  }
+
+  .case-study-desc {
+    max-width: 100%;
+  }
+
+  .case-study-metrics {
+    grid-template-columns: 1fr;
+    gap: 1rem;
   }
 }
