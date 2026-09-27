@@ -15,12 +15,12 @@ const POSTS_DATA = [
   },
   {
     id: 2,
-    title: "OSHA Safety Standards: Best Practices for Complex Sites",
+    title: "Practical Safety Planning for Construction Sites",
     category: "Safety",
     date: "Aug 12, 2026",
     readTime: "4 min read",
     excerpt:
-      "How rigorous site protocol and continuous risk monitoring eliminate workplace hazards on heavy build sites.",
+      "A practical look at planning site activities, identifying hazards, documenting issues and keeping safety visible throughout a project.",
     image: "/assets/portfolio_2.avif",
     featured: false,
   },
@@ -70,8 +70,8 @@ const Blog = () => {
           <span className="light-title">PERSPECTIVES.</span>
         </h1>
         <p className="blog-hero-description">
-          Technical insights, safety standards, and project engineering updates from
-          our site directors and lead structural teams.
+          Practical construction insights covering planning, materials, safety,
+          sustainability and project management.
         </p>
       </section>
 
@@ -84,8 +84,6 @@ const Blog = () => {
           <div className="featured-content">
             <div className="post-meta">
               <span className="category-tag">{featuredPost.category}</span>
-              <span className="meta-dot">•</span>
-              <span className="meta-text">{featuredPost.date}</span>
               <span className="meta-dot">•</span>
               <span className="meta-text">{featuredPost.readTime}</span>
             </div>
@@ -126,24 +124,25 @@ const Blog = () => {
                 </div>
                 <h3 className="post-title">{post.title}</h3>
                 <p className="post-excerpt">{post.excerpt}</p>
-                <span className="post-date">{post.date}</span>
+                <span className="post-date">FIELD INSIGHT</span>
               </div>
             </article>
           ))}
         </div>
       </section>
 
-      {/* ================= NEWSLETTER CARD ================= */}
       <section className="blog-newsletter-section">
         <div className="newsletter-card">
           <div className="newsletter-text">
-            <h2>STAY UPDATED ON SITE DISPATCHES</h2>
-            <p>Subscribe to receive monthly engineering case studies and technical reviews.</p>
+            <h2>KEEP LEARNING BEFORE YOU BUILD</h2>
+            <p>
+              Explore the Construction Guide for practical topics on planning,
+              materials, cost, site management, maintenance and more.
+            </p>
           </div>
-          <form className="newsletter-form" onSubmit={(e) => e.preventDefault()}>
-            <input type="email" placeholder="Enter corporate email..." required />
-            <button type="submit">SUBSCRIBE</button>
-          </form>
+          <a className="read-more-btn" href="/construction-guide">
+            EXPLORE THE GUIDE →
+          </a>
         </div>
       </section>
     </div>
