@@ -4,6 +4,7 @@ import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import RequestQuote from "./components/RequestQuote";
+import Chatbot from "./components/Chatbot";
 
 import Projects from "./components/Projects";
 import About from "./components/About";
@@ -40,32 +41,21 @@ function App() {
 
       <Routes>
         <Route path="/" element={<Home onOpenQuote={openQuote} />} />
-        <Route
-          path="/projects"
-          element={<Projects />}
-        />
-        <Route
-          path="/about"
-          element={<About onOpenQuote={openQuote} />}
-        />
+        <Route path="/projects" element={<Projects />} />
+        <Route path="/about" element={<About onOpenQuote={openQuote} />} />
         <Route path="/services" element={<Services onOpenQuote={openQuote} />} />
         <Route path="/contact" element={<Contact onOpenQuote={openQuote} />} />
         <Route path="/blog" element={<Blog />} />
         <Route path="/construction-guide" element={<ConstructionGuide />} />
         <Route path="/cost-calculator" element={<CostCalculator />} />
-        <Route
-          path="/boq-estimation"
-          element={<BOQEstimation onOpenQuote={openQuote} />}
-        />
+        <Route path="/boq-estimation" element={<BOQEstimation onOpenQuote={openQuote} />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
 
       <Footer onOpenQuote={openQuote} />
 
-      <RequestQuote
-        isOpen={isQuoteOpen}
-        onClose={closeQuote}
-      />
+      <RequestQuote isOpen={isQuoteOpen} onClose={closeQuote} />
+      <Chatbot />
     </BrowserRouter>
   );
 }
