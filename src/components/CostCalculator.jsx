@@ -273,6 +273,33 @@ function CostCalculator() {
         </div>
       </section>
 
+      <section className="calculator-intro-banner">
+        <div className="cost-calculator-container">
+          <div className="calculator-intro-banner-copy">
+            <span className="cost-eyebrow">PLAN WITH BETTER INFORMATION</span>
+            <h2>GET AN EARLY VIEW OF YOUR BUILDING COST.</h2>
+            <p>
+              Use our interactive calculator to explore an indicative cost
+              range before moving to a professional BOQ and site-specific
+              assessment.
+            </p>
+          </div>
+
+          <div className="calculator-intro-banner-card">
+            <div>
+              <span>CONSTRUCTION COST CALCULATOR</span>
+              <h3>Estimate. Understand. Plan your next step.</h3>
+              <p>
+                Enter your location, building type, floor area, number of
+                floors and finish level to generate a preliminary construction
+                cost range.
+              </p>
+            </div>
+            <span className="calculator-intro-banner-arrow">↓</span>
+          </div>
+        </div>
+      </section>
+
       <section className="calculator-section">
         <div className="cost-calculator-container">
           <div className="calculator-selector" aria-label="Construction calculators">
