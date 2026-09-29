@@ -1,4 +1,4 @@
-import { ArrowUpRight, Calculator, ClipboardList, BookOpen } from "lucide-react";
+import { ArrowUpRight, ClipboardList, BookOpen } from "lucide-react";
 import { Link } from "react-router-dom";
 import Capabilities from "./Capabilities";
 import Portfolio from "./Portfolio";
@@ -62,42 +62,6 @@ function Home({ onOpenQuote }) {
       <Services embedded onOpenQuote={onOpenQuote} />
 
       <Portfolio />
-
-      <section className="home-calculator-preview">
-        <div className="home-section-container">
-          <div className="home-section-heading">
-            <div>
-              <span className="home-kicker">PLAN WITH BETTER INFORMATION</span>
-              <h2>GET AN EARLY VIEW OF YOUR BUILDING COST.</h2>
-            </div>
-            <p>
-              Use our interactive calculator to explore an indicative cost
-              range before moving to a professional BOQ and site-specific
-              assessment.
-            </p>
-          </div>
-
-          <div className="calculator-preview-card">
-            <div className="calculator-preview-icon">
-              <Calculator size={30} />
-            </div>
-
-            <div className="calculator-preview-copy">
-              <span>CONSTRUCTION COST CALCULATOR</span>
-              <h3>Estimate. Understand. Plan your next step.</h3>
-              <p>
-                Enter your location, building type, floor area, number of
-                floors and finish level to generate a preliminary construction
-                cost range.
-              </p>
-            </div>
-
-            <Link to="/cost-calculator" className="home-outline-button">
-              OPEN CALCULATOR <ArrowUpRight size={18} />
-            </Link>
-          </div>
-        </div>
-      </section>
 
       <section className="home-guide-preview">
         <div className="home-section-container">
